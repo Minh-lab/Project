@@ -1,0 +1,11 @@
+D:\Winform\LOP\LOP\bin\Debug\LOP.exe.config
+D:\Winform\LOP\LOP\bin\Debug\LOP.exe
+D:\Winform\LOP\LOP\bin\Debug\LOP.pdb
+D:\Winform\LOP\LOP\obj\Debug\LOP.csproj.AssemblyReference.cache
+D:\Winform\LOP\LOP\obj\Debug\LOP.Form1.resources
+D:\Winform\LOP\LOP\obj\Debug\LOP.Properties.Resources.resources
+D:\Winform\LOP\LOP\obj\Debug\LOP.csproj.GenerateResource.cache
+D:\Winform\LOP\LOP\obj\Debug\LOP.csproj.CoreCompileInputs.cache
+D:\Winform\LOP\LOP\obj\Debug\LOP.exe
+D:\Winform\LOP\LOP\obj\Debug\LOP.pdb
+D:\Winform\LOP\LOP\obj\Debug\LOP.Form2.resources
