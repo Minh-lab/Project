@@ -9,3 +9,16 @@ D:\Winform\LOP\LOP\obj\Debug\LOP.csproj.CoreCompileInputs.cache
 D:\Winform\LOP\LOP\obj\Debug\LOP.exe
 D:\Winform\LOP\LOP\obj\Debug\LOP.pdb
 D:\Winform\LOP\LOP\obj\Debug\LOP.Form2.resources
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.csproj.AssemblyReference.cache
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.Form1.resources
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.Properties.Resources.resources
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.csproj.GenerateResource.cache
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.csproj.CoreCompileInputs.cache
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.exe
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.pdb
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\bin\Debug\LOP.exe.config
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\bin\Debug\LOP.exe
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\bin\Debug\LOP.pdb
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.UserControl1.resources
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.timkiem.resources
+D:\QuanLiSinhVien\QuanLiSinhVien\LOP\LOP\obj\Debug\LOP.thongke.resources
