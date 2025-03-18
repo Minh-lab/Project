@@ -8,3 +8,14 @@ D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4
 D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.CoreCompileInputs.cache
 D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.exe
 D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.pdb
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.FormQL.resources
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.FormSV.resources
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.Properties.Resources.resources
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.exe
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.pdb
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.exe.config
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.exe
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.pdb

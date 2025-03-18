@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace QuanLiSinhVienNhom4
 {
-    public partial class Form1 : Form
+    public partial class FormQL: Form
     {
-        public Form1()
+        public FormQL()
         {
             InitializeComponent();
+        }
+
+        private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSV formsv = new FormSV();
+            formsv.Show();
         }
     }
 }
