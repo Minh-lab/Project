@@ -68,6 +68,7 @@
             this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
             this.lớpToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.lớpToolStripMenuItem.Text = "Lớp";
+            this.lớpToolStripMenuItem.Click += new System.EventHandler(this.lớpToolStripMenuItem_Click);
             // 
             // FormQL
             // 
