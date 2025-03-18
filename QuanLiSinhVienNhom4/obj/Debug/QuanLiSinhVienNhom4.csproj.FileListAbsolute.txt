@@ -1,0 +1,10 @@
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.exe.config
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.exe
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.pdb
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.AssemblyReference.cache
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.Form1.resources
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.Properties.Resources.resources
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.GenerateResource.cache
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.CoreCompileInputs.cache
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.exe
+D:\Winform\QuanLiSinhVienNhom4\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.pdb
