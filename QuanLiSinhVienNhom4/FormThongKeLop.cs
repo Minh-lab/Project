@@ -37,13 +37,20 @@ namespace QuanLiSinhVienNhom4
             }
             if(cmbtieuchi.SelectedIndex == 1)
             {
+                lblluachon.Text = "";
+                cmbluachon.Visible = false;
+            }
+            if (cmbtieuchi.SelectedIndex == 2)
+            {
                 lopform lopform = new lopform();
                 cmbluachon.DataSource = lopform.getDanhSachKhoa();
                 cmbluachon.DisplayMember = "tenkhoa";
                 cmbluachon.ValueMember = "tenkhoa";
-                lblluachon.Text = "Chọn Khoa";
+                lblluachon.Text = "Chọn khoa";
                 cmbluachon.Visible = true;
+
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,11 +119,116 @@ namespace QuanLiSinhVienNhom4
                     // Cập nhật lại biểu đồ
                     chartthongke.Update();
                 }
-                else if (cmbluachon.SelectedIndex == 1)
+                else if (cmbtieuchi.SelectedIndex == 1)
                 {
+                    string query = "SELECT khoa.tenkhoa as [Tên khoa], COUNT(sinhvien.masinhvien) AS [Số sinh viên] FROM khoa JOIN lop ON khoa.makhoa = lop.makhoa JOIN sinhvien ON lop.malop = sinhvien.malop GROUP BY khoa.tenkhoa";
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
+                    sqlDataAdapter.Fill(dataTable);
+                    thongke.DataSource = dataTable;
+                    // 1️⃣ Xóa dữ liệu cũ trên Chart
+                    chartthongke.Series.Clear();
+
+                    // 2️⃣ Tạo Series cho biểu đồ cột
+                    Series series = new Series("Số Sinh Viên");
+                    series.ChartType = SeriesChartType.Column; // Dạng biểu đồ cột
+                    series.Color = Color.Blue;
+                    series.IsValueShownAsLabel = true; // Hiển thị số lượng trên cột
+                    chartthongke.Series.Add(series);
+
+                    // 3️⃣ Thêm dữ liệu từ DataTable vào Chart
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        string tenKhoa = row["Tên khoa"].ToString();
+                        int soSinhVien = Convert.ToInt32(row["Số sinh viên"]);
+
+                        // Thêm điểm dữ liệu vào biểu đồ
+                        chartthongke.Series["Số Sinh Viên"].Points.AddXY(tenKhoa, soSinhVien);
+                    }
+
+                    // 4️⃣ Cấu hình trục X, Y cho biểu đồ
+                    chartthongke.ChartAreas[0].AxisX.Title = "Khoa";
+                    chartthongke.ChartAreas[0].AxisY.Title = "Số lượng sinh viên";
+                    chartthongke.ChartAreas[0].AxisY.Minimum = 0;
+                    chartthongke.ChartAreas[0].AxisX.Interval = 1; // Hiển thị tất cả khoa
+
+                    // 5️⃣ Cập nhật lại biểu đồ
+                    chartthongke.Update();
+                }
+                else if (cmbtieuchi.SelectedIndex == 2)
+                {
+                    // 1️⃣ Truy vấn SQL
+                    // 1️⃣ Tạo truy vấn SQL (Dùng Parameter @tenkhoa)
+                    string query = @"
+                                    SELECT 
+                                        khoa.tenkhoa AS [Tên Khoa], 
+                                        lop.tenlop AS [Tên Lớp], 
+                                        COUNT(sinhvien.masinhvien) AS [Số Sinh Viên] 
+                                    FROM khoa
+                                    JOIN lop ON khoa.makhoa = lop.makhoa
+                                    JOIN sinhvien ON lop.malop = sinhvien.malop
+                                    WHERE khoa.tenkhoa = @tenkhoa
+                                    GROUP BY khoa.tenkhoa, lop.tenlop;
+                                ";
+
+                    // 2️⃣ Tạo DataTable để chứa dữ liệu
+                    DataTable dataTable = new DataTable();
+
+                    // 3️⃣ Tạo SqlCommand và thêm Parameter
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@tenkhoa", cmbluachon.Text);
+
+                        // 4️⃣ Chạy truy vấn bằng SqlDataAdapter
+                        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                        sqlDataAdapter.Fill(dataTable);
+                    }
+
+                    // 5️⃣ Hiển thị dữ liệu lên DataGridView
+                    thongke.DataSource = dataTable;
+                    // 1️⃣ Xóa dữ liệu cũ trong Chart
+                    chartthongke.Series.Clear();
+
+                    // 2️⃣ Tạo DataTable để lấy dữ liệu từ SQL
+                    DataTable dataTable1 = new DataTable();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@tenkhoa", cmbluachon.Text);
+                        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                        sqlDataAdapter.Fill(dataTable1);
+                    }
+
+                    // 3️⃣ Tạo Series mới cho biểu đồ (Dạng cột)
+                    Series series = new Series("Số Sinh Viên");
+                    series.ChartType = SeriesChartType.Column;
+                    series.Color = Color.Blue;
+                    series.IsValueShownAsLabel = true; // Hiển thị số trên cột
+
+                    // 4️⃣ Thêm dữ liệu từ DataTable vào Chart
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        string tenLop = row["Tên Lớp"].ToString();
+                        int soSV = Convert.ToInt32(row["Số Sinh Viên"]);
+
+                        series.Points.AddXY(tenLop, soSV);
+                    }
+
+                    // 5️⃣ Thêm Series vào Chart
+                    chartthongke.Series.Add(series);
+
+                    // 6️⃣ Cấu hình trục X, Y cho dễ nhìn
+                    chartthongke.ChartAreas[0].AxisX.Title = "Lớp Học";
+                    chartthongke.ChartAreas[0].AxisY.Title = "Số Lượng Sinh Viên";
+                    chartthongke.ChartAreas[0].AxisY.Minimum = 0;
+                    chartthongke.ChartAreas[0].AxisX.Interval = 1; // Hiển thị tất cả lớp
+
+                    // 7️⃣ Cập nhật biểu đồ
+                    chartthongke.Update();
+
+
 
                 }
-              }
+            }
             }
         }
     }

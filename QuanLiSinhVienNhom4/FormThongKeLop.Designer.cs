@@ -39,8 +39,8 @@
             this.cmbtieuchi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chartthongke = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.thongke = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -50,8 +50,8 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartthongke)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thongke)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -130,7 +130,8 @@
             this.cmbtieuchi.FormattingEnabled = true;
             this.cmbtieuchi.Items.AddRange(new object[] {
             "Thống kê số học sinh nam, nữ trong 1 lớp",
-            "Thống kê học sinh trong 1 lớp theo từng khoa"});
+            "Thống kê số học sinh trong từng khoa",
+            "Thống kê số học sinh trong từng lớp theo khoa"});
             this.cmbtieuchi.Location = new System.Drawing.Point(140, 13);
             this.cmbtieuchi.Margin = new System.Windows.Forms.Padding(4);
             this.cmbtieuchi.Name = "cmbtieuchi";
@@ -166,18 +167,6 @@
             this.chartthongke.TabIndex = 0;
             this.chartthongke.Text = "chart1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 292);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // thongke
             // 
             this.thongke.AllowUserToAddRows = false;
@@ -191,6 +180,18 @@
             this.thongke.RowTemplate.Height = 28;
             this.thongke.Size = new System.Drawing.Size(1146, 292);
             this.thongke.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1146, 292);
+            this.dataGridView1.TabIndex = 0;
             // 
             // FormThongKeLop
             // 
@@ -211,8 +212,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartthongke)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thongke)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
