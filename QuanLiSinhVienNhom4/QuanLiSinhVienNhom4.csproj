@@ -54,6 +54,12 @@
     <Compile Include="FormThongKeLop.Designer.cs">
       <DependentUpon>FormThongKeLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongKeSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongKeSV.Designer.cs">
+      <DependentUpon>FormThongKeSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="timkiemlop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSV.resx">
       <DependentUpon>FormSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongKeSV.resx">
+      <DependentUpon>FormThongKeSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lopform.resx">
       <DependentUpon>lopform.cs</DependentUpon>
