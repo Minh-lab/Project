@@ -58,7 +58,6 @@
             this.lbLOP = new System.Windows.Forms.Label();
             this.tbLOP = new System.Windows.Forms.TextBox();
             this.lbMALOP = new System.Windows.Forms.Label();
-            this.tbMALOP = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbQUEQUAN = new System.Windows.Forms.Label();
             this.lbDIACHI = new System.Windows.Forms.Label();
@@ -73,6 +72,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.cbbMALOP = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -379,10 +379,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cbbMALOP);
             this.panel3.Controls.Add(this.lbLOP);
             this.panel3.Controls.Add(this.tbLOP);
             this.panel3.Controls.Add(this.lbMALOP);
-            this.panel3.Controls.Add(this.tbMALOP);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -418,16 +418,6 @@
             this.lbMALOP.Size = new System.Drawing.Size(71, 25);
             this.lbMALOP.TabIndex = 1;
             this.lbMALOP.Text = "Mã lớp";
-            // 
-            // tbMALOP
-            // 
-            this.tbMALOP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbMALOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMALOP.Location = new System.Drawing.Point(163, 29);
-            this.tbMALOP.Name = "tbMALOP";
-            this.tbMALOP.Size = new System.Drawing.Size(190, 30);
-            this.tbMALOP.TabIndex = 3;
             // 
             // panel4
             // 
@@ -605,14 +595,26 @@
             this.button6.Text = "Thống kê";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // cbbMALOP
+            // 
+            this.cbbMALOP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbMALOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbMALOP.FormattingEnabled = true;
+            this.cbbMALOP.Location = new System.Drawing.Point(163, 29);
+            this.cbbMALOP.Name = "cbbMALOP";
+            this.cbbMALOP.Size = new System.Drawing.Size(190, 33);
+            this.cbbMALOP.TabIndex = 4;
+            this.cbbMALOP.SelectedIndexChanged += new System.EventHandler(this.cbbMALOP_SelectedIndexChanged);
+            // 
+            // FormSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 804);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "FormSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí sinh viên";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -657,7 +659,6 @@
         private System.Windows.Forms.Label lbLOP;
         private System.Windows.Forms.TextBox tbLOP;
         private System.Windows.Forms.Label lbMALOP;
-        private System.Windows.Forms.TextBox tbMALOP;
         private System.Windows.Forms.TextBox tbHOTEN;
         private System.Windows.Forms.DateTimePicker dateNS;
         private System.Windows.Forms.Label lbQUEQUAN;
@@ -679,6 +680,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.ComboBox cbbMALOP;
     }
 }
 

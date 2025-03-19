@@ -31,3 +31,4 @@ D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.GenerateRe
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.CoreCompileInputs.cache
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.exe
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.pdb
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\LOP.Form1.resources
