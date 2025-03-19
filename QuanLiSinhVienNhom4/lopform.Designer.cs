@@ -103,7 +103,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(1234, 526);
-            this.splitContainer1.SplitterDistance = 216;
+            this.splitContainer1.SplitterDistance = 215;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -127,7 +127,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.10924F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.38655F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 216);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 215);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -499,7 +499,7 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.08968F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.91031F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 359F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 367F));
             this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 181);
@@ -507,16 +507,16 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1228, 32);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1228, 31);
             this.tableLayoutPanel6.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(742, 3);
+            this.button1.Location = new System.Drawing.Point(735, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 26);
+            this.button1.Size = new System.Drawing.Size(122, 25);
             this.button1.TabIndex = 0;
             this.button1.Text = "Thống kê";
             this.button1.UseVisualStyleBackColor = false;
@@ -537,7 +537,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1234, 305);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1234, 306);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // dslop
@@ -571,7 +571,7 @@
             this.dslop.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dslop.RowTemplate.Height = 28;
             this.dslop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dslop.Size = new System.Drawing.Size(1226, 297);
+            this.dslop.Size = new System.Drawing.Size(1226, 298);
             this.dslop.TabIndex = 0;
             this.dslop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dslop_CellContentClick);
             // 

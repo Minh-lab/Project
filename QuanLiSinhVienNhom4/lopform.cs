@@ -386,7 +386,8 @@ namespace QuanLiSinhVienNhom4
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FormThongKeLop formThongKeLop = new FormThongKeLop();
+            formThongKeLop.ShowDialog();
         }
     }
 }
