@@ -62,7 +62,7 @@ namespace QuanLiSinhVienNhom4
                 // Đổ dữ liệu vào ComboBox
                 cbbMALOP.DataSource = dt;
                 cbbMALOP.DisplayMember = "malop";  // Hiển thị Mã Lớp
-                cbbMALOP.ValueMember = "tenlop";   // Giá trị ẩn là Tên Lớp
+                cbbMALOP.ValueMember = "malop";   // Giá trị ẩn là Tên Lớp
                 cbbMALOP.SelectedIndex = -1;       // Không chọn gì mặc định
             }
             catch (Exception ex)
@@ -240,7 +240,7 @@ namespace QuanLiSinhVienNhom4
                 tbMSV.Text = row.Cells["Column1"].Value?.ToString() ?? "";
                 
                 tbHOTEN.Text = row.Cells["Column2"].Value?.ToString() ?? "";
-                cbbMALOP.SelectedValue = row.Cells["Column5"].Value?.ToString();
+                cbbMALOP.SelectedValue = row.Cells["Column5"].Value?.ToString().Trim();
                 tbDIACHI.Text = row.Cells["Column8"].Value?.ToString() ?? "";
                 tbLOP.Text = row.Cells["Column6"].Value?.ToString() ?? "";
 
@@ -279,6 +279,16 @@ namespace QuanLiSinhVienNhom4
             {
                 tbLOP.Text = ""; // Nếu không chọn gì, để trống
             }
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+          
+        }
+        private void buttonThongKe_Click(object sender, EventArgs e)
+        {
+            FormThongKeSV a = new FormThongKeSV();
+            a.Show();
         }
     }
 }
