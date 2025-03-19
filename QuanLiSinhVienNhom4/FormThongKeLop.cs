@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,7 @@ namespace QuanLiSinhVienNhom4
             using (conn = new SqlConnection(chuoiketnoi))
             {
                 conn.Open();
-                if(cmbtieuchi.SelectedIndex == 0)
+                if (cmbtieuchi.SelectedIndex == 0)
                 {
                     string query = @"
                                     SELECT 
@@ -110,9 +111,13 @@ namespace QuanLiSinhVienNhom4
 
                     // Cập nhật lại biểu đồ
                     chartthongke.Update();
+                }
+                else if (cmbluachon.SelectedIndex == 1)
+                {
 
                 }
+              }
             }
         }
     }
-}
+
