@@ -499,7 +499,11 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.08968F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.91031F));
+<<<<<<< HEAD
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 354F));
+=======
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 345F));
+>>>>>>> 780a61d073c1760e0ac92a8414cf3f3b6db14a33
             this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 180);
@@ -514,7 +518,11 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(746, 3);
+=======
+            this.button1.Location = new System.Drawing.Point(754, 3);
+>>>>>>> 780a61d073c1760e0ac92a8414cf3f3b6db14a33
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 24);
             this.button1.TabIndex = 0;

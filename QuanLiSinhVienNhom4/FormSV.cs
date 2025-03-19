@@ -25,7 +25,7 @@ namespace QuanLiSinhVienNhom4
             ketnoi.Open();
             Load();
            // LoadMaSinhVien();
-           // LoadMaLop();
+           LoadMaLop();
         }
 
         private new void Load()
@@ -50,11 +50,33 @@ namespace QuanLiSinhVienNhom4
             }
         }
 
+        private void LoadMaLop()
+        {
+            try
+            {
+                string sql = "SELECT MaLop, TenLop FROM Lop"; // Lấy danh sách lớp từ bảng Lop
+                SqlDataAdapter da = new SqlDataAdapter(sql, ketnoi);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                // Đổ dữ liệu vào ComboBox
+                cbbMALOP.DataSource = dt;
+                cbbMALOP.DisplayMember = "MaLop";  // Hiển thị Mã Lớp
+                cbbMALOP.ValueMember = "TenLop";   // Giá trị ẩn là Tên Lớp
+                cbbMALOP.SelectedIndex = -1;       // Không chọn gì mặc định
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách lớp: " + ex.Message);
+            }
+        }
+
+
         private void btTHEM_Click(object sender, EventArgs e)
         {
             try
             {
-                if(string.IsNullOrEmpty(tbMSV.Text) || string.IsNullOrEmpty(tbMALOP.Text))
+                if(string.IsNullOrEmpty(tbMSV.Text) || cbbMALOP.SelectedValue == null)
                 {
                     MessageBox.Show("Mã sinh viên và mã lớp không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -68,7 +90,7 @@ namespace QuanLiSinhVienNhom4
                     string gioitinh = rbNAM.Checked ? "Nam" : rbNU.Checked ? "Nữ" : "Khác";
                     cmd.Parameters.AddWithValue("@GioiTinh", gioitinh);
                     cmd.Parameters.AddWithValue("@NgaySinh", dateNS.Value);
-                    cmd.Parameters.AddWithValue("@MaLop", tbMALOP.Text);
+                    cmd.Parameters.AddWithValue("@MaLop", cbbMALOP.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@DiaChi", tbDIACHI.Text);
                     cmd.Parameters.AddWithValue("@QueQuan", tbQUEQUAN.Text);
                     cmd.Parameters.AddWithValue("@SoDienThoai", tbSODIENTHOAI.Text);
@@ -104,7 +126,7 @@ namespace QuanLiSinhVienNhom4
                     string gioiTinh = rbNAM.Checked ? "Nam" : rbNU.Checked ? "Nữ" : "Khác";
                     cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh);
                     cmd.Parameters.AddWithValue("@NgaySinh", dateNS.Value);
-                    cmd.Parameters.AddWithValue("@MaLop", tbMALOP.Text);
+                    cmd.Parameters.AddWithValue("@MaLop", cbbMALOP.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@DiaChi", tbDIACHI.Text);
                     cmd.Parameters.AddWithValue("@QueQuan", tbQUEQUAN.Text);
                     cmd.Parameters.AddWithValue("@SoDienThoai", tbSODIENTHOAI.Text);
@@ -196,7 +218,7 @@ namespace QuanLiSinhVienNhom4
         {
             tbMSV.Clear();
             tbHOTEN.Clear();
-            tbMALOP.Clear();
+            cbbMALOP.SelectedIndex = -1;
             tbDIACHI.Clear();
             tbQUEQUAN.Clear();
             tbSODIENTHOAI.Clear();
@@ -218,7 +240,7 @@ namespace QuanLiSinhVienNhom4
                 tbMSV.Text = row.Cells["Column1"].Value?.ToString() ?? "";
                 
                 tbHOTEN.Text = row.Cells["Column2"].Value?.ToString() ?? "";
-                tbMALOP.Text = row.Cells["Column5"].Value?.ToString() ?? "";
+                cbbMALOP.SelectedValue = row.Cells["Column5"].Value?.ToString();
                 tbDIACHI.Text = row.Cells["Column8"].Value?.ToString() ?? "";
                 tbLOP.Text = row.Cells["Column6"].Value?.ToString() ?? "";
 
@@ -242,5 +264,22 @@ namespace QuanLiSinhVienNhom4
                 }
             }
         }
+
+        private void cbbMALOP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbMALOP.SelectedIndex != -1) // Chỉ cập nhật khi có lựa chọn
+            {
+                DataRowView drv = cbbMALOP.SelectedItem as DataRowView;
+                if (drv != null)
+                {
+                    tbLOP.Text = drv["TenLop"].ToString(); // Lấy tên lớp tương ứng
+                }
+            }
+            else
+            {
+                tbLOP.Text = ""; // Nếu không chọn gì, để trống
+            }
+        }
+
     }
 }

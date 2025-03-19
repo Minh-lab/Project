@@ -30,5 +30,9 @@ D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.GenerateRe
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.CoreCompileInputs.cache
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.exe
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.pdb
+<<<<<<< HEAD
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.timkiemlop.resources
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.lopform.resources
+=======
+C:\Users\Admin\source\repos\Project\QuanLiSinhVienNhom4\obj\Debug\LOP.Form1.resources
+>>>>>>> 780a61d073c1760e0ac92a8414cf3f3b6db14a33
