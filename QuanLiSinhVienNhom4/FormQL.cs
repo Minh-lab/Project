@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LOP;
+using QuanLiSinhVienNhom4;
 
 namespace QuanLiSinhVienNhom4
 {
@@ -26,8 +26,9 @@ namespace QuanLiSinhVienNhom4
 
         private void lớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+               lopform quanlilop = new lopform();
+                quanlilop.Show();
+
         }
     }
 }

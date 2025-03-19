@@ -10,17 +10,18 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiSinhVienNhom4;
 
-namespace LOP
+namespace QuanLiSinhVienNhom4
 {
-    public partial class Form1 : Form
+    public partial class lopform : FormQL
     {
             public string chuoiketnoi = "Data Source = DESKTOP-DOFGP4J;" +
                                             " Initial Catalog =  quanlisinhvien;" +
                                                 "Integrated Security = true;  ";
             public SqlConnection conn = null;
 
-        public Form1()
+        public lopform()
         {
             InitializeComponent();
         }
@@ -112,7 +113,7 @@ namespace LOP
         DataTable getDSLop()
         {
             DataTable dt = new DataTable();
-            string query = "select malop,tenlop,tenkhoa,tengiangvien,siso from lop join khoa on lop.makhoa = khoa.makhoa join giangvien on giangvien.magiangvien = lop.magiangvien";
+            string query = "select malop,tenlop, khoa.makhoa ,tenkhoa,giangvien.magiangvien,tengiangvien,siso from lop join khoa on lop.makhoa = khoa.makhoa join giangvien on giangvien.magiangvien = lop.magiangvien;\r\n";
             using (conn = new SqlConnection(chuoiketnoi))
             {
                 conn.Open();
@@ -320,6 +321,10 @@ namespace LOP
                     cmd.ExecuteNonQuery();
                 }
                 dslop.DataSource = getDSLop();
+                txtmalop.Text = "";
+                txttenlop.Text = "";
+                txtsiso.Text = "";
+                errorProvider1.Clear();
             }
             else
             {
@@ -345,6 +350,43 @@ namespace LOP
                 else
                     errorProvider1.SetError(txttenlop, "");
             }
+        }
+
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+            
+            timkiemlop tklop = new timkiemlop();
+            tklop.ShowDialog();
+            string yeucau = tklop.getYeuCauTimKiem();
+            if(yeucau == "Mã Lớp")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoMaLop();
+            }
+            else if(yeucau == "Mã Khoa")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoMaKhoa();
+            }
+            else if (yeucau == "Mã GVCN")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoMaGVCN();
+            }
+            else if (yeucau == "Tên Lớp")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoTenLop();
+            }
+            else if (yeucau == "Tên Khoa")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoTenKhoa();
+            }
+            else if (yeucau == "Tên GVCN")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoTenGVCN();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

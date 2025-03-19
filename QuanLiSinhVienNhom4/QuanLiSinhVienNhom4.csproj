@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="timkiemlop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="timkiemlop.Designer.cs">
+      <DependentUpon>timkiemlop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="timkiemlop.resx">
+      <DependentUpon>timkiemlop.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

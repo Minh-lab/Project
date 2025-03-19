@@ -23,7 +23,6 @@ D:\CloneDuan\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.exe.config
 D:\CloneDuan\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.exe
 D:\CloneDuan\QuanLiSinhVienNhom4\bin\Debug\QuanLiSinhVienNhom4.pdb
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.AssemblyReference.cache
-D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\LOP.Form1.resources
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.FormQL.resources
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.FormSV.resources
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.Properties.Resources.resources
@@ -31,3 +30,5 @@ D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.GenerateRe
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.csproj.CoreCompileInputs.cache
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.exe
 D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.pdb
+D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.timkiemlop.resources
+D:\CloneDuan\QuanLiSinhVienNhom4\obj\Debug\QuanLiSinhVienNhom4.lopform.resources
