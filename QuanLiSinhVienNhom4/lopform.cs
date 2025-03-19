@@ -389,5 +389,32 @@ namespace QuanLiSinhVienNhom4
             FormThongKeLop formThongKeLop = new FormThongKeLop();
             formThongKeLop.ShowDialog();
         }
+
+        public DataTable getDanhSachLop()
+        {
+            string query = "select tenlop from lop";
+            DataTable dt = new DataTable();
+            using(conn = new SqlConnection(chuoiketnoi))
+            {
+                conn.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(dt);
+            }
+            return dt;
+        }
+        public DataTable getDanhSachKhoa()
+        {
+            string query = "select tenkhoa from khoa";
+            DataTable dt = new DataTable();
+            using (conn = new SqlConnection(chuoiketnoi))
+            {
+                conn.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(dt);
+            }
+            return dt;
+        }
+
+
     }
 }
