@@ -14,10 +14,10 @@ namespace QuanLiSinhVienNhom4
 {
     public partial class FormSV: Form
     {
-        string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS;Initial Catalog=QLSV;Integrated Security=True;";
+        string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS;Initial Catalog=quanlisinhvien;Integrated Security=True;";
         SqlConnection ketnoi = null;
 
-
+        
         public FormSV()
         {
             InitializeComponent();
@@ -32,11 +32,11 @@ namespace QuanLiSinhVienNhom4
         {
             try
             {
-                string sql = "SELECT SinhVien.MaSinhVien, SinhVien.HoTen, SinhVien.GioiTinh, SinhVien.NgaySinh, " +
-                    "Lop.TenLop, SinhVien.MaLop, " +
-                    "SinhVien.DiaChi, SinhVien.QueQuan, SinhVien.SoDienThoai " +  // Chỉ lấy MaLop từ SinhVien
-                     "FROM SinhVien " +
-                     "INNER JOIN Lop ON SinhVien.MaLop = Lop.MaLop;";
+                string sql = "SELECT sinhvien.masinhvien, sinhvien.hoten, sinhvien.gioitinh, sinhvien.ngaysinh, " +
+                    "lop.tenlop, lop.malop, " +
+                    "sinhvien.diachi, sinhvien.quequan, sinhvien.sodienthoai " +  // Chỉ lấy MaLop từ SinhVien
+                     "FROM sinhvien " +
+                     "INNER JOIN lop ON sinhvien.malop = lop.malop;";
                 SqlDataAdapter daSV = new SqlDataAdapter(sql, ketnoi);
                 DataTable dt = new DataTable();
                 daSV.Fill(dt);
@@ -54,15 +54,15 @@ namespace QuanLiSinhVienNhom4
         {
             try
             {
-                string sql = "SELECT MaLop, TenLop FROM Lop"; // Lấy danh sách lớp từ bảng Lop
+                string sql = "SELECT malop, tenlop FROM lop"; // Lấy danh sách lớp từ bảng Lop
                 SqlDataAdapter da = new SqlDataAdapter(sql, ketnoi);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
                 // Đổ dữ liệu vào ComboBox
                 cbbMALOP.DataSource = dt;
-                cbbMALOP.DisplayMember = "MaLop";  // Hiển thị Mã Lớp
-                cbbMALOP.ValueMember = "TenLop";   // Giá trị ẩn là Tên Lớp
+                cbbMALOP.DisplayMember = "malop";  // Hiển thị Mã Lớp
+                cbbMALOP.ValueMember = "tenlop";   // Giá trị ẩn là Tên Lớp
                 cbbMALOP.SelectedIndex = -1;       // Không chọn gì mặc định
             }
             catch (Exception ex)
@@ -81,19 +81,19 @@ namespace QuanLiSinhVienNhom4
                     MessageBox.Show("Mã sinh viên và mã lớp không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                string sql = "INSERT INTO SinhVien (MaSinhVien,HoTen, GioiTinh, NgaySinh, Malop, DiaChi, QueQuan, SoDienThoai)" +
-                    "VALUES (@MaSinhVien, @HoTen, @GioiTinh, @NgaySinh, @Malop, @DiaChi, @QueQuan, @SoDienThoai)";
+                string sql = "INSERT INTO sinhvien (masinhvien, hoten, gioitinh, ngaysinh, malop, diachi, quequan, sodienthoai)" +
+                    "VALUES (@masinhvien, @oten, @gioitinh, @ngaysinh, @malop, @diachi, @quequan, @sodienthoai)";
                 using (SqlCommand cmd = new SqlCommand(sql, ketnoi))
                 {
-                    cmd.Parameters.AddWithValue("@MaSinhVien", tbMSV.Text);
-                    cmd.Parameters.AddWithValue("@HoTen", tbHOTEN.Text);
+                    cmd.Parameters.AddWithValue("@masinhvien", tbMSV.Text);
+                    cmd.Parameters.AddWithValue("@hoten", tbHOTEN.Text);
                     string gioitinh = rbNAM.Checked ? "Nam" : rbNU.Checked ? "Nữ" : "Khác";
-                    cmd.Parameters.AddWithValue("@GioiTinh", gioitinh);
-                    cmd.Parameters.AddWithValue("@NgaySinh", dateNS.Value);
-                    cmd.Parameters.AddWithValue("@MaLop", cbbMALOP.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@DiaChi", tbDIACHI.Text);
-                    cmd.Parameters.AddWithValue("@QueQuan", tbQUEQUAN.Text);
-                    cmd.Parameters.AddWithValue("@SoDienThoai", tbSODIENTHOAI.Text);
+                    cmd.Parameters.AddWithValue("@gioitinh", gioitinh);
+                    cmd.Parameters.AddWithValue("@ngaysinh", dateNS.Value);
+                    cmd.Parameters.AddWithValue("@malop", cbbMALOP.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@diachi", tbDIACHI.Text);
+                    cmd.Parameters.AddWithValue("@quequan", tbQUEQUAN.Text);
+                    cmd.Parameters.AddWithValue("@sodienthoai", tbSODIENTHOAI.Text);
                     cmd.ExecuteNonQuery();
                 }
                 MessageBox.Show("Thêm sinh viên thành công!");
@@ -115,21 +115,21 @@ namespace QuanLiSinhVienNhom4
                     return;
                 }
 
-                string sql = "UPDATE SinhVien SET HoTen = @HoTen, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, " +
-                             "MaLop = @MaLop, DiaChi = @DiaChi, QueQuan = @QueQuan, SoDienThoai = @SoDienThoai " +
-                             "WHERE MaSinhVien = @MaSinhVien";
+                string sql = "UPDATE sinhvien SET hoten = @hoten, gioitinh = @gioitinh, ngaysinh = @ngaysinh, " +
+                             "malop = @malop, diachi = @diachi, quequan = @quequan, sodienthoai = @sodienthoai " +
+                             "WHERE masinhvien = @masinhvien";
 
                 using (SqlCommand cmd = new SqlCommand(sql, ketnoi))
                 {
-                    cmd.Parameters.AddWithValue("@MaSinhVien", tbMSV.Text);
-                    cmd.Parameters.AddWithValue("@HoTen", tbHOTEN.Text);
-                    string gioiTinh = rbNAM.Checked ? "Nam" : rbNU.Checked ? "Nữ" : "Khác";
-                    cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh);
-                    cmd.Parameters.AddWithValue("@NgaySinh", dateNS.Value);
-                    cmd.Parameters.AddWithValue("@MaLop", cbbMALOP.SelectedValue.ToString());
-                    cmd.Parameters.AddWithValue("@DiaChi", tbDIACHI.Text);
-                    cmd.Parameters.AddWithValue("@QueQuan", tbQUEQUAN.Text);
-                    cmd.Parameters.AddWithValue("@SoDienThoai", tbSODIENTHOAI.Text);
+                    cmd.Parameters.AddWithValue("@masinhvien", tbMSV.Text);
+                    cmd.Parameters.AddWithValue("@hoten", tbHOTEN.Text);
+                    string gioitinh = rbNAM.Checked ? "Nam" : rbNU.Checked ? "Nữ" : "Khác";
+                    cmd.Parameters.AddWithValue("@gioitinh", gioitinh);
+                    cmd.Parameters.AddWithValue("@ngaysinh", dateNS.Value);
+                    cmd.Parameters.AddWithValue("@malop", cbbMALOP.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@diachi", tbDIACHI.Text);
+                    cmd.Parameters.AddWithValue("@quequan", tbQUEQUAN.Text);
+                    cmd.Parameters.AddWithValue("@sodienthoai", tbSODIENTHOAI.Text);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
@@ -162,10 +162,10 @@ namespace QuanLiSinhVienNhom4
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sinh viên này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    string sql = "DELETE FROM SinhVien WHERE MaSinhVien = @MaSinhVien";
+                    string sql = "DELETE FROM sinhvien WHERE masinhvien = @masinhvien";
                     using (SqlCommand cmd = new SqlCommand(sql, ketnoi))
                     {
-                        cmd.Parameters.AddWithValue("@MaSinhVien", tbMSV.Text);
+                        cmd.Parameters.AddWithValue("@masinhvien", tbMSV.Text);
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
@@ -195,8 +195,8 @@ namespace QuanLiSinhVienNhom4
                     Load(); ;
                     return;
                 }
-                string sql = "Select MaSinhVien,HoTen, GioiTinh, NgaySinh, Malop,Lop.TenLop, DiaChi, QueQuan, SoDienThoai from SinhVien"+
-                    "Inner join Lop on SinhVien.MaLop = Lop.MaLop" + "Where SinhVien.MaSinhVien like @keyword or Lop.MaLop like @keyword";
+                string sql = "Select masinhvien, hoten, gioitinh, ngaysinh, malop, diachi, quequan, sodienthoai from sinhvien" +
+                    "Inner join lop on sinhvien.malop = lop.malop" + "Where sinhvien.masinhvien like @keyword or lop.malop like @keyword";
                 using (SqlCommand cmd = new SqlCommand(sql, ketnoi))
                 {
                     cmd.Parameters.AddWithValue ("@keyword","%" + keyword + "%");
@@ -272,7 +272,7 @@ namespace QuanLiSinhVienNhom4
                 DataRowView drv = cbbMALOP.SelectedItem as DataRowView;
                 if (drv != null)
                 {
-                    tbLOP.Text = drv["TenLop"].ToString(); // Lấy tên lớp tương ứng
+                    tbLOP.Text = drv["tenlop"].ToString(); // Lấy tên lớp tương ứng
                 }
             }
             else
@@ -280,6 +280,5 @@ namespace QuanLiSinhVienNhom4
                 tbLOP.Text = ""; // Nếu không chọn gì, để trống
             }
         }
-
     }
 }
