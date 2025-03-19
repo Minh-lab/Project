@@ -1,6 +1,14 @@
-.vs/ 
 bin/
 obj/
+.vs/
+
+# Bỏ qua file thực thi và file debug
 *.exe
 *.pdb
 *.cache
+*.log
+
+# Bỏ qua file cấu hình người dùng
+*.user
+*.suo
+*.csproj.user
