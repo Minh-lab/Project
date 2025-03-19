@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbluachon = new System.Windows.Forms.ComboBox();
             this.lblluachon = new System.Windows.Forms.Label();
             this.cmbtieuchi = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbltimkiem = new System.Windows.Forms.Label();
             this.chartthongke = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.thongke = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -71,7 +71,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.thongke);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(1146, 455);
-            this.splitContainer1.SplitterDistance = 158;
+            this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -88,19 +88,19 @@
             this.splitContainer2.Panel1.Controls.Add(this.cmbluachon);
             this.splitContainer2.Panel1.Controls.Add(this.lblluachon);
             this.splitContainer2.Panel1.Controls.Add(this.cmbtieuchi);
-            this.splitContainer2.Panel1.Controls.Add(this.label1);
+            this.splitContainer2.Panel1.Controls.Add(this.lbltimkiem);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.chartthongke);
-            this.splitContainer2.Size = new System.Drawing.Size(1146, 158);
-            this.splitContainer2.SplitterDistance = 631;
+            this.splitContainer2.Size = new System.Drawing.Size(1146, 200);
+            this.splitContainer2.SplitterDistance = 615;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(516, 51);
+            this.button1.Location = new System.Drawing.Point(500, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 61);
             this.button1.TabIndex = 4;
@@ -111,7 +111,7 @@
             // cmbluachon
             // 
             this.cmbluachon.FormattingEnabled = true;
-            this.cmbluachon.Location = new System.Drawing.Point(140, 79);
+            this.cmbluachon.Location = new System.Drawing.Point(140, 89);
             this.cmbluachon.Name = "cmbluachon";
             this.cmbluachon.Size = new System.Drawing.Size(343, 33);
             this.cmbluachon.TabIndex = 3;
@@ -121,7 +121,7 @@
             // 
             this.lblluachon.Location = new System.Drawing.Point(13, 79);
             this.lblluachon.Name = "lblluachon";
-            this.lblluachon.Size = new System.Drawing.Size(111, 33);
+            this.lblluachon.Size = new System.Drawing.Size(111, 43);
             this.lblluachon.TabIndex = 2;
             this.lblluachon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -139,31 +139,31 @@
             this.cmbtieuchi.TabIndex = 1;
             this.cmbtieuchi.SelectedIndexChanged += new System.EventHandler(this.cmbtieuchi_SelectedIndexChanged);
             // 
-            // label1
+            // lbltimkiem
             // 
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tiêu chí ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbltimkiem.Location = new System.Drawing.Point(13, 9);
+            this.lbltimkiem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltimkiem.Name = "lbltimkiem";
+            this.lbltimkiem.Size = new System.Drawing.Size(84, 41);
+            this.lbltimkiem.TabIndex = 0;
+            this.lbltimkiem.Text = "Tiêu chí ";
+            this.lbltimkiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chartthongke
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartthongke.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartthongke.ChartAreas.Add(chartArea1);
             this.chartthongke.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartthongke.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chartthongke.Legends.Add(legend1);
             this.chartthongke.Location = new System.Drawing.Point(0, 0);
             this.chartthongke.Margin = new System.Windows.Forms.Padding(4);
             this.chartthongke.Name = "chartthongke";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartthongke.Series.Add(series2);
-            this.chartthongke.Size = new System.Drawing.Size(510, 158);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartthongke.Series.Add(series1);
+            this.chartthongke.Size = new System.Drawing.Size(526, 200);
             this.chartthongke.TabIndex = 0;
             this.chartthongke.Text = "chart1";
             // 
@@ -178,7 +178,7 @@
             this.thongke.Name = "thongke";
             this.thongke.RowHeadersWidth = 62;
             this.thongke.RowTemplate.Height = 28;
-            this.thongke.Size = new System.Drawing.Size(1146, 292);
+            this.thongke.Size = new System.Drawing.Size(1146, 250);
             this.thongke.TabIndex = 1;
             // 
             // dataGridView1
@@ -190,7 +190,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(1146, 250);
             this.dataGridView1.TabIndex = 0;
             // 
             // FormThongKeLop
@@ -224,7 +224,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartthongke;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cmbtieuchi;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbltimkiem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbluachon;
         private System.Windows.Forms.Label lblluachon;

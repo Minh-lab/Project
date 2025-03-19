@@ -16,13 +16,29 @@ namespace QuanLiSinhVienNhom4
 {
     public partial class lopform : FormQL
     {
-        public string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS;Initial Catalog=quanlisinhvien;Integrated Security=True;";
+        public string chuoiketnoi = "Data Source=DESKTOP-DOFGP4J ;Initial Catalog=quanlisinhvien;Integrated Security=True;";
 
         public SqlConnection conn = null;
 
         public lopform()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dslop.DataSource = getDSLop();
+            cmbkhoa.DataSource = getMaKhoa();
+            cmbkhoa.DisplayMember = "makhoa"; // Cột hiển thị
+            cmbkhoa.ValueMember = "makhoa";   // Giá trị thực tế
+            cmbgvcn.DataSource = getMaGiangVien(cmbkhoa.Text);
+            cmbgvcn.DisplayMember = "magiangvien"; // Cột hiển thị
+            cmbgvcn.ValueMember = "magiangvien";   // Giá trị thực tế
+            cmbkhoa.Text = "";
+            cmbgvcn.Text = "";
+            lbltengiangvien.Text = "";
+            lbltenkhoa.Text = "";
+
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -75,6 +91,110 @@ namespace QuanLiSinhVienNhom4
                  MessageBox.Show("Error", "Lớp đã có trong danh sách!");
                 }
             }
+        private void btnsua_Click(object sender, EventArgs e)
+        {
+            string query = "update lop set malop = @malop,tenlop = @tenlop, magiangvien = @magiangvien, makhoa = @makhoa, siso = @siso where malop = @malop";
+            using (conn = new SqlConnection(chuoiketnoi))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@malop", txtmalop.Text);
+                    cmd.Parameters.AddWithValue("@tenlop", txttenlop.Text);
+                    cmd.Parameters.AddWithValue("@makhoa", cmbkhoa.Text);
+                    cmd.Parameters.AddWithValue("@magiangvien", cmbgvcn.Text);
+                    cmd.Parameters.AddWithValue("@siso", txtsiso.Text);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            dslop.DataSource = getDSLop();
+        }
+
+        private void btnxoa_Click_1(object sender, EventArgs e)
+        {
+            string query = "update sinhvien\r\nset malop = NULL where malop = @malop;\r\ndelete lop where malop = @malop";
+            if (txtmalop.Text != "" && txtsiso.Text != "" && txtsiso.Text != "")
+            {
+                using (conn = new SqlConnection(chuoiketnoi))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@malop", txtmalop.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                dslop.DataSource = getDSLop();
+                txtmalop.Text = "";
+                txttenlop.Text = "";
+                txtsiso.Text = "";
+                errorProvider1.Clear();
+            }
+            else
+            {
+                errorProvider1.Clear();
+                if (txtmalop.Text == "")
+                    errorProvider1.SetError(txtmalop, "Không được để trống!");
+                else
+                    errorProvider1.SetError(txtmalop, "");
+                if (cmbkhoa.Text == "")
+                    errorProvider1.SetError(cmbgvcn, "Không được để trống!");
+                else
+                    errorProvider1.SetError(cmbgvcn, "");
+                if (cmbkhoa.Text == "")
+                    errorProvider1.SetError(cmbkhoa, "Không được để trống!");
+                else
+                    errorProvider1.SetError(cmbkhoa, "");
+                if (txtsiso.Text == "")
+                    errorProvider1.SetError(txtsiso, "Không được để trống!");
+                else
+                    errorProvider1.SetError(txtsiso, "");
+                if (txttenlop.Text == "")
+                    errorProvider1.SetError(txttenlop, "Không được để trống!");
+                else
+                    errorProvider1.SetError(txttenlop, "");
+            }
+        }
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+
+            timkiemlop tklop = new timkiemlop();
+            tklop.ShowDialog();
+            string yeucau = tklop.getYeuCauTimKiem();
+            if (yeucau == "Mã Lớp")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoMaLop();
+            }
+            else if (yeucau == "Mã Khoa")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoMaKhoa();
+            }
+            else if (yeucau == "Mã GVCN")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoMaGVCN();
+            }
+            else if (yeucau == "Tên Lớp")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoTenLop();
+            }
+            else if (yeucau == "Tên Khoa")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoTenKhoa();
+            }
+            else if (yeucau == "Tên GVCN")
+            {
+                dslop.DataSource = tklop.TimKiemLopTheoTenGVCN();
+            }
+        }
+
+        private void btnreset_Click(object sender, EventArgs e)
+        {
+            dslop.DataSource = getDSLop();
+        }
+        //thongke
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormThongKeLop formThongKeLop = new FormThongKeLop();
+            formThongKeLop.ShowDialog();
+        }
 
         private void txttenlop_TextChanged(object sender, EventArgs e)
         {
@@ -95,21 +215,6 @@ namespace QuanLiSinhVienNhom4
                 adapter.Fill(dt);
             }
             return dt;
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            dslop.DataSource = getDSLop();
-            cmbkhoa.DataSource = getMaKhoa();
-            cmbkhoa.DisplayMember = "makhoa"; // Cột hiển thị
-            cmbkhoa.ValueMember = "makhoa";   // Giá trị thực tế
-            cmbgvcn.DataSource = getMaGiangVien(cmbkhoa.Text);
-            cmbgvcn.DisplayMember = "magiangvien"; // Cột hiển thị
-            cmbgvcn.ValueMember = "magiangvien";   // Giá trị thực tế
-            cmbkhoa.Text = "";
-            cmbgvcn.Text = "";
-            lbltengiangvien.Text = "";
-            lbltenkhoa.Text = "";
-
         }
 
 
@@ -166,7 +271,31 @@ namespace QuanLiSinhVienNhom4
                 }
             }
         }
-
+        public DataTable getDanhSachLop()
+        {
+            string query = "select tenlop from lop";
+            DataTable dt = new DataTable();
+            using (conn = new SqlConnection(chuoiketnoi))
+            {
+                conn.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(dt);
+            }
+            return dt;
+        }
+        public DataTable getDanhSachKhoa()
+        {
+            string query = "select tenkhoa from khoa";
+            DataTable dt = new DataTable();
+            using (conn = new SqlConnection(chuoiketnoi))
+            {
+                conn.Open();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(dt);
+            }
+            return dt;
+        }
+        //Su kien cellcontent
         private void dslop_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex >= 0)
@@ -179,40 +308,9 @@ namespace QuanLiSinhVienNhom4
             }
         }
 
-        private void btnsua_Click(object sender, EventArgs e)
-        {
-            string query = "update lop set malop = @malop,tenlop = @tenlop, magiangvien = @magiangvien, makhoa = @makhoa, siso = @siso where malop = @malop";
-            using (conn = new SqlConnection(chuoiketnoi))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@malop", txtmalop.Text);
-                    cmd.Parameters.AddWithValue("@tenlop", txttenlop.Text);
-                    cmd.Parameters.AddWithValue("@makhoa", cmbkhoa.Text);
-                    cmd.Parameters.AddWithValue("@magiangvien", cmbgvcn.Text);
-                    cmd.Parameters.AddWithValue("@siso", txtsiso.Text);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            dslop.DataSource = getDSLop();
-        }
-
-        private void btnreset_Click(object sender, EventArgs e)
-        {
-            dslop.DataSource = getDSLop();
-        }
-
-
-
-
-        
-
-        Color oldColor;
         private void btnxoa_MouseEnter(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            oldColor = btn.BackColor;
             btn.BackColor = Color.LightCoral;
 
         }
@@ -222,17 +320,6 @@ namespace QuanLiSinhVienNhom4
             Button btn = (Button)sender;
             btn.BackColor = SystemColors.Control;
         }
-
-        private void cmbkhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbkhoa.Text != "") { 
-                cmbgvcn.Enabled = true;
-                lbltenkhoa.Text = getTenKhoa(cmbkhoa.Text);
-                cmbgvcn.DataSource = getMaGiangVien(cmbkhoa.Text);
-            }
-        }
-
-        //lay danh sach ma giang vien
         private DataTable getMaGiangVien(string makhoa)
         {
             DataTable dt = new DataTable();
@@ -296,6 +383,8 @@ namespace QuanLiSinhVienNhom4
             }
             return kq;
         }
+
+        //lay danh sach ma giang vien
         private void cmbkhoa_MouseLeave(object sender, EventArgs e)
         {
             if (cmbkhoa.Text != "")
@@ -305,119 +394,19 @@ namespace QuanLiSinhVienNhom4
             else
                 cmbgvcn.Enabled = false;
         }
+        private void cmbkhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbkhoa.Text != "")
+            {
+                cmbgvcn.Enabled = true;
+                lbltenkhoa.Text = getTenKhoa(cmbkhoa.Text);
+                cmbgvcn.DataSource = getMaGiangVien(cmbkhoa.Text);
+            }
+        }
 
         private void cmbgvcn_TextChanged(object sender, EventArgs e)
         {
             lbltengiangvien.Text  = getTenGiangVien(cmbgvcn.Text);
         }
-
-        private void btnxoa_Click_1(object sender, EventArgs e)
-        {
-            string query = "update sinhvien\r\nset malop = NULL where malop = @malop;\r\ndelete lop where malop = @malop";
-            if (txtmalop.Text != "" && txtsiso.Text != "" && txtsiso.Text != "")
-            {
-                using (conn = new SqlConnection(chuoiketnoi))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@malop", txtmalop.Text);
-                    cmd.ExecuteNonQuery();
-                }
-                dslop.DataSource = getDSLop();
-                txtmalop.Text = "";
-                txttenlop.Text = "";
-                txtsiso.Text = "";
-                errorProvider1.Clear();
-            }
-            else
-            {
-                errorProvider1.Clear();
-                if (txtmalop.Text == "")
-                    errorProvider1.SetError(txtmalop, "Không được để trống!");
-                else
-                    errorProvider1.SetError(txtmalop, "");
-                if (cmbkhoa.Text == "")
-                    errorProvider1.SetError(cmbgvcn, "Không được để trống!");
-                else
-                    errorProvider1.SetError(cmbgvcn, "");
-                if (cmbkhoa.Text == "")
-                    errorProvider1.SetError(cmbkhoa, "Không được để trống!");
-                else
-                    errorProvider1.SetError(cmbkhoa, "");
-                if (txtsiso.Text == "")
-                    errorProvider1.SetError(txtsiso, "Không được để trống!");
-                else
-                    errorProvider1.SetError(txtsiso, "");
-                if (txttenlop.Text == "")
-                    errorProvider1.SetError(txttenlop, "Không được để trống!");
-                else
-                    errorProvider1.SetError(txttenlop, "");
-            }
-        }
-
-        private void btntimkiem_Click(object sender, EventArgs e)
-        {
-            
-            timkiemlop tklop = new timkiemlop();
-            tklop.ShowDialog();
-            string yeucau = tklop.getYeuCauTimKiem();
-            if(yeucau == "Mã Lớp")
-            {
-                dslop.DataSource = tklop.TimKiemLopTheoMaLop();
-            }
-            else if(yeucau == "Mã Khoa")
-            {
-                dslop.DataSource = tklop.TimKiemLopTheoMaKhoa();
-            }
-            else if (yeucau == "Mã GVCN")
-            {
-                dslop.DataSource = tklop.TimKiemLopTheoMaGVCN();
-            }
-            else if (yeucau == "Tên Lớp")
-            {
-                dslop.DataSource = tklop.TimKiemLopTheoTenLop();
-            }
-            else if (yeucau == "Tên Khoa")
-            {
-                dslop.DataSource = tklop.TimKiemLopTheoTenKhoa();
-            }
-            else if (yeucau == "Tên GVCN")
-            {
-                dslop.DataSource = tklop.TimKiemLopTheoTenGVCN();
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormThongKeLop formThongKeLop = new FormThongKeLop();
-            formThongKeLop.ShowDialog();
-        }
-
-        public DataTable getDanhSachLop()
-        {
-            string query = "select tenlop from lop";
-            DataTable dt = new DataTable();
-            using(conn = new SqlConnection(chuoiketnoi))
-            {
-                conn.Open();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
-                sqlDataAdapter.Fill(dt);
-            }
-            return dt;
-        }
-        public DataTable getDanhSachKhoa()
-        {
-            string query = "select tenkhoa from khoa";
-            DataTable dt = new DataTable();
-            using (conn = new SqlConnection(chuoiketnoi))
-            {
-                conn.Open();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
-                sqlDataAdapter.Fill(dt);
-            }
-            return dt;
-        }
-
-
     }
 }
