@@ -30,15 +30,6 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,6 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbbMALOP = new System.Windows.Forms.ComboBox();
             this.lbLOP = new System.Windows.Forms.Label();
             this.tbLOP = new System.Windows.Forms.TextBox();
             this.lbMALOP = new System.Windows.Forms.Label();
@@ -72,7 +64,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.cbbMALOP = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -124,69 +124,6 @@
             this.dgv1.Size = new System.Drawing.Size(1285, 443);
             this.dgv1.TabIndex = 1;
             this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaSinhVien";
-            this.Column1.HeaderText = "Mã sinh viên";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "HoTen";
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "GioiTinh";
-            this.Column3.HeaderText = "Giới tính";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "NgaySinh";
-            this.Column4.HeaderText = "Ngày sinh";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "MaLop";
-            this.Column5.HeaderText = "Mã lớp";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "TenLop";
-            this.Column6.HeaderText = "Lớp";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "SoDienThoai";
-            this.Column7.HeaderText = "Số điện thoại";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "DiaChi";
-            this.Column8.HeaderText = "Địa chỉ";
-            this.Column8.MinimumWidth = 8;
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "QueQuan";
-            this.Column9.HeaderText = "Quê quán";
-            this.Column9.MinimumWidth = 8;
-            this.Column9.Name = "Column9";
             // 
             // tableLayoutPanel2
             // 
@@ -388,6 +325,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(413, 254);
             this.panel3.TabIndex = 0;
+            // 
+            // cbbMALOP
+            // 
+            this.cbbMALOP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbMALOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbMALOP.FormattingEnabled = true;
+            this.cbbMALOP.Location = new System.Drawing.Point(163, 29);
+            this.cbbMALOP.Name = "cbbMALOP";
+            this.cbbMALOP.Size = new System.Drawing.Size(190, 33);
+            this.cbbMALOP.TabIndex = 4;
+            this.cbbMALOP.SelectedIndexChanged += new System.EventHandler(this.cbbMALOP_SelectedIndexChanged);
             // 
             // lbLOP
             // 
@@ -595,17 +544,68 @@
             this.button6.Text = "Thống kê";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // cbbMALOP
+            // Column1
             // 
-            this.cbbMALOP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbMALOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbMALOP.FormattingEnabled = true;
-            this.cbbMALOP.Location = new System.Drawing.Point(163, 29);
-            this.cbbMALOP.Name = "cbbMALOP";
-            this.cbbMALOP.Size = new System.Drawing.Size(190, 33);
-            this.cbbMALOP.TabIndex = 4;
-            this.cbbMALOP.SelectedIndexChanged += new System.EventHandler(this.cbbMALOP_SelectedIndexChanged);
+            this.Column1.DataPropertyName = "masinhvien";
+            this.Column1.HeaderText = "Mã sinh viên";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "hoten";
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "gioitinh";
+            this.Column3.HeaderText = "Giới tính";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "ngaysinh";
+            this.Column4.HeaderText = "Ngày sinh";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "malop";
+            this.Column5.HeaderText = "Mã lớp";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "tenlop";
+            this.Column6.HeaderText = "Lớp";
+            this.Column6.MinimumWidth = 8;
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "sodienthoai";
+            this.Column7.HeaderText = "Số điện thoại";
+            this.Column7.MinimumWidth = 8;
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "diachi";
+            this.Column8.HeaderText = "Địa chỉ";
+            this.Column8.MinimumWidth = 8;
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "quequan";
+            this.Column9.HeaderText = "Quê quán";
+            this.Column9.MinimumWidth = 8;
+            this.Column9.Name = "Column9";
             // 
             // FormSV
             // 
@@ -671,6 +671,7 @@
         private System.Windows.Forms.RadioButton rbNU;
         private System.Windows.Forms.RadioButton rbNAM;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox cbbMALOP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -680,7 +681,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.ComboBox cbbMALOP;
     }
 }
 
