@@ -103,7 +103,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(1234, 526);
-            this.splitContainer1.SplitterDistance = 213;
+            this.splitContainer1.SplitterDistance = 216;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -127,7 +127,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.10924F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.38655F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 213);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 216);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -150,7 +150,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1234, 36);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1234, 37);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // label5
@@ -160,7 +160,7 @@
             this.label5.Location = new System.Drawing.Point(708, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 36);
+            this.label5.Size = new System.Drawing.Size(93, 37);
             this.label5.TabIndex = 4;
             this.label5.Text = "Tên khoa";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,7 +172,7 @@
             this.label7.Location = new System.Drawing.Point(53, 0);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 36);
+            this.label7.Size = new System.Drawing.Size(102, 37);
             this.label7.TabIndex = 0;
             this.label7.Text = "Tên GVCN";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,7 +181,7 @@
             // 
             this.lbltengiangvien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbltengiangvien.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbltengiangvien.Location = new System.Drawing.Point(158, 2);
+            this.lbltengiangvien.Location = new System.Drawing.Point(158, 3);
             this.lbltengiangvien.Name = "lbltengiangvien";
             this.lbltengiangvien.Size = new System.Drawing.Size(252, 31);
             this.lbltengiangvien.TabIndex = 5;
@@ -191,7 +191,7 @@
             // 
             this.lbltenkhoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbltenkhoa.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbltenkhoa.Location = new System.Drawing.Point(804, 2);
+            this.lbltenkhoa.Location = new System.Drawing.Point(804, 3);
             this.lbltenkhoa.Name = "lbltenkhoa";
             this.lbltenkhoa.Size = new System.Drawing.Size(288, 31);
             this.lbltenkhoa.TabIndex = 6;
@@ -205,7 +205,7 @@
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 136);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 137);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -499,32 +499,24 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.08968F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.91031F));
-<<<<<<< HEAD
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 354F));
-=======
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 345F));
->>>>>>> 780a61d073c1760e0ac92a8414cf3f3b6db14a33
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 356F));
             this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 180);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 181);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1228, 30);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1228, 32);
             this.tableLayoutPanel6.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-<<<<<<< HEAD
-            this.button1.Location = new System.Drawing.Point(746, 3);
-=======
-            this.button1.Location = new System.Drawing.Point(754, 3);
->>>>>>> 780a61d073c1760e0ac92a8414cf3f3b6db14a33
+            this.button1.Location = new System.Drawing.Point(744, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 24);
+            this.button1.Size = new System.Drawing.Size(124, 26);
             this.button1.TabIndex = 0;
             this.button1.Text = "Thống kê";
             this.button1.UseVisualStyleBackColor = false;
@@ -545,7 +537,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1234, 308);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1234, 305);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // dslop
@@ -579,7 +571,7 @@
             this.dslop.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dslop.RowTemplate.Height = 28;
             this.dslop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dslop.Size = new System.Drawing.Size(1226, 300);
+            this.dslop.Size = new System.Drawing.Size(1226, 297);
             this.dslop.TabIndex = 0;
             this.dslop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dslop_CellContentClick);
             // 
