@@ -106,6 +106,10 @@ namespace QuanLiSinhVienNhom4
             cmbgvcn.DataSource = getMaGiangVien(cmbkhoa.Text);
             cmbgvcn.DisplayMember = "magiangvien"; // Cột hiển thị
             cmbgvcn.ValueMember = "magiangvien";   // Giá trị thực tế
+            cmbkhoa.Text = "";
+            cmbgvcn.Text = "";
+            lbltengiangvien.Text = "";
+            lbltenkhoa.Text = "";
 
         }
 
