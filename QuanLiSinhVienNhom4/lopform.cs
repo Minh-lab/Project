@@ -16,7 +16,7 @@ namespace QuanLiSinhVienNhom4
 {
     public partial class lopform : FormQL
     {
-        public string chuoiketnoi = "Data Source=DESKTOP-DOFGP4J ;Initial Catalog=quanlisinhvien;Integrated Security=True;";
+        public string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS ;Initial Catalog=quanlisinhvien;Integrated Security=True;";
 
         public SqlConnection conn = null;
 
