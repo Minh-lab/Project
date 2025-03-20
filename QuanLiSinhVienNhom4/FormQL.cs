@@ -33,7 +33,7 @@ namespace QuanLiSinhVienNhom4
 
         private void FormQL_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
+            //pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
 
         }
 
@@ -47,6 +47,12 @@ namespace QuanLiSinhVienNhom4
         {
             fdanhsachkhoa frmdanhsachkhoa = new fdanhsachkhoa();
             frmdanhsachkhoa.Show();
+        }
+
+        private void điểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDiem formDiem = new FormDiem();
+            formDiem.Show();
         }
     }
 }

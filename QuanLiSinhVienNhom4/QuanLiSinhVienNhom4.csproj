@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -60,6 +60,18 @@
     <Compile Include="fdanhsachkhoa.Designer.cs">
       <DependentUpon>fdanhsachkhoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiem.Designer.cs">
+      <DependentUpon>FormDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMon.Designer.cs">
+      <DependentUpon>FormMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThongKeLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </Compile>
     <Compile Include="FormThongKeSV.Designer.cs">
       <DependentUpon>FormThongKeSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTkeDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTkeDiem.Designer.cs">
+      <DependentUpon>FormTkeDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="timkiemlop.cs">
       <SubType>Form</SubType>
@@ -104,6 +122,12 @@
     <EmbeddedResource Include="fdanhsachkhoa.resx">
       <DependentUpon>fdanhsachkhoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDiem.resx">
+      <DependentUpon>FormDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMon.resx">
+      <DependentUpon>FormMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThongKeLop.resx">
       <DependentUpon>FormThongKeLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongKeSV.resx">
       <DependentUpon>FormThongKeSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTkeDiem.resx">
+      <DependentUpon>FormTkeDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lopform.resx">
       <DependentUpon>lopform.cs</DependentUpon>
