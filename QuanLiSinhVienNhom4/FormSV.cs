@@ -14,7 +14,7 @@ namespace QuanLiSinhVienNhom4
 {
     public partial class FormSV: Form
     {
-        string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS;Initial Catalog=quanlisinhvien;Integrated Security=True;";
+        string chuoiketnoi = "Data Source=DESKTOP-DOFGP4J;Initial Catalog=quanlisinhvien;Integrated Security=True;";
         SqlConnection ketnoi = null;
 
         
