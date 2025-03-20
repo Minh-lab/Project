@@ -20,9 +20,8 @@ namespace QuanLiSinhVienNhom4
             fdanhsachgiangvien frm = new fdanhsachgiangvien();
             frm.Show();
         }
-        string chuoilienket = "Data Source=DESKTOP-N04KL08\\SQLEXPRESS01;" +
-            "Initial Catalog=QLSV;" +
-            "Integrated Security=True;";
+        string chuoilienket = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" +
+            " Initial Catalog = quanlisinhvien; Integrated Security = true";
         SqlConnection conn = null;
 
         void Load_dgv(string sql)

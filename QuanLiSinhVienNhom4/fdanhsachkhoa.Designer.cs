@@ -66,9 +66,9 @@
             this.panel3.Controls.Add(this.tb_tentruongkhoa);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(431, 3);
+            this.panel3.Location = new System.Drawing.Point(559, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(422, 129);
+            this.panel3.Size = new System.Drawing.Size(551, 129);
             this.panel3.TabIndex = 1;
             // 
             // cb_matruongkhoa
@@ -78,7 +78,7 @@
             this.cb_matruongkhoa.FormattingEnabled = true;
             this.cb_matruongkhoa.Location = new System.Drawing.Point(160, 32);
             this.cb_matruongkhoa.Name = "cb_matruongkhoa";
-            this.cb_matruongkhoa.Size = new System.Drawing.Size(242, 28);
+            this.cb_matruongkhoa.Size = new System.Drawing.Size(371, 28);
             this.cb_matruongkhoa.TabIndex = 7;
             this.cb_matruongkhoa.SelectedIndexChanged += new System.EventHandler(this.cb_matruongkhoa_SelectedIndexChanged);
             this.cb_matruongkhoa.TextChanged += new System.EventHandler(this.cb_matruongkhoa_TextChanged);
@@ -99,7 +99,7 @@
             this.tb_tentruongkhoa.Location = new System.Drawing.Point(160, 89);
             this.tb_tentruongkhoa.Name = "tb_tentruongkhoa";
             this.tb_tentruongkhoa.ReadOnly = true;
-            this.tb_tentruongkhoa.Size = new System.Drawing.Size(242, 26);
+            this.tb_tentruongkhoa.Size = new System.Drawing.Size(371, 26);
             this.tb_tentruongkhoa.TabIndex = 6;
             // 
             // label4
@@ -120,7 +120,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(422, 129);
+            this.panel2.Size = new System.Drawing.Size(550, 129);
             this.panel2.TabIndex = 0;
             // 
             // tb_tenkhoa
@@ -129,7 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_tenkhoa.Location = new System.Drawing.Point(136, 83);
             this.tb_tenkhoa.Name = "tb_tenkhoa";
-            this.tb_tenkhoa.Size = new System.Drawing.Size(265, 26);
+            this.tb_tenkhoa.Size = new System.Drawing.Size(393, 26);
             this.tb_tenkhoa.TabIndex = 5;
             this.tb_tenkhoa.TextChanged += new System.EventHandler(this.tb_tenkhoa_TextChanged);
             // 
@@ -139,7 +139,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_makhoa.Location = new System.Drawing.Point(136, 28);
             this.tb_makhoa.Name = "tb_makhoa";
-            this.tb_makhoa.Size = new System.Drawing.Size(265, 26);
+            this.tb_makhoa.Size = new System.Drawing.Size(393, 26);
             this.tb_makhoa.TabIndex = 4;
             this.tb_makhoa.TextChanged += new System.EventHandler(this.tb_makhoa_TextChanged);
             // 
@@ -173,7 +173,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(856, 135);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1113, 135);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // dgv_khoa
@@ -191,7 +191,7 @@
             this.dgv_khoa.ReadOnly = true;
             this.dgv_khoa.RowHeadersWidth = 62;
             this.dgv_khoa.RowTemplate.Height = 28;
-            this.dgv_khoa.Size = new System.Drawing.Size(855, 372);
+            this.dgv_khoa.Size = new System.Drawing.Size(1112, 453);
             this.dgv_khoa.TabIndex = 2;
             this.dgv_khoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_khoa_CellClick);
             // 
@@ -238,7 +238,7 @@
             this.panel1.Controls.Add(this.dgv_khoa);
             this.panel1.Location = new System.Drawing.Point(2, 206);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(855, 372);
+            this.panel1.Size = new System.Drawing.Size(1112, 453);
             this.panel1.TabIndex = 0;
             // 
             // tlp_button
@@ -260,7 +260,7 @@
             this.tlp_button.Name = "tlp_button";
             this.tlp_button.RowCount = 1;
             this.tlp_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_button.Size = new System.Drawing.Size(588, 59);
+            this.tlp_button.Size = new System.Drawing.Size(845, 59);
             this.tlp_button.TabIndex = 6;
             // 
             // bt_them
@@ -268,7 +268,7 @@
             this.bt_them.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bt_them.Location = new System.Drawing.Point(3, 3);
             this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(111, 53);
+            this.bt_them.Size = new System.Drawing.Size(163, 53);
             this.bt_them.TabIndex = 0;
             this.bt_them.Text = "Thêm";
             this.bt_them.UseVisualStyleBackColor = true;
@@ -277,9 +277,9 @@
             // bt_sua
             // 
             this.bt_sua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bt_sua.Location = new System.Drawing.Point(120, 3);
+            this.bt_sua.Location = new System.Drawing.Point(172, 3);
             this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(111, 53);
+            this.bt_sua.Size = new System.Drawing.Size(163, 53);
             this.bt_sua.TabIndex = 1;
             this.bt_sua.Text = "Sửa";
             this.bt_sua.UseVisualStyleBackColor = true;
@@ -288,9 +288,9 @@
             // bt_xoa
             // 
             this.bt_xoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bt_xoa.Location = new System.Drawing.Point(237, 3);
+            this.bt_xoa.Location = new System.Drawing.Point(341, 3);
             this.bt_xoa.Name = "bt_xoa";
-            this.bt_xoa.Size = new System.Drawing.Size(111, 53);
+            this.bt_xoa.Size = new System.Drawing.Size(163, 53);
             this.bt_xoa.TabIndex = 2;
             this.bt_xoa.Text = "Xóa";
             this.bt_xoa.UseVisualStyleBackColor = true;
@@ -299,9 +299,9 @@
             // bt_lammoi
             // 
             this.bt_lammoi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bt_lammoi.Location = new System.Drawing.Point(354, 3);
+            this.bt_lammoi.Location = new System.Drawing.Point(510, 3);
             this.bt_lammoi.Name = "bt_lammoi";
-            this.bt_lammoi.Size = new System.Drawing.Size(111, 53);
+            this.bt_lammoi.Size = new System.Drawing.Size(163, 53);
             this.bt_lammoi.TabIndex = 3;
             this.bt_lammoi.Text = "Làm mới";
             this.bt_lammoi.UseVisualStyleBackColor = true;
@@ -310,9 +310,9 @@
             // bt_timkiem
             // 
             this.bt_timkiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bt_timkiem.Location = new System.Drawing.Point(471, 3);
+            this.bt_timkiem.Location = new System.Drawing.Point(679, 3);
             this.bt_timkiem.Name = "bt_timkiem";
-            this.bt_timkiem.Size = new System.Drawing.Size(114, 53);
+            this.bt_timkiem.Size = new System.Drawing.Size(163, 53);
             this.bt_timkiem.TabIndex = 4;
             this.bt_timkiem.Text = "Tìm kiếm";
             this.bt_timkiem.UseVisualStyleBackColor = true;
@@ -322,11 +322,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 585);
+            this.ClientSize = new System.Drawing.Size(1113, 666);
             this.Controls.Add(this.tlp_button);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "fdanhsachkhoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách khoa";
             this.Load += new System.EventHandler(this.fdanhsachkhoa_Load);
             this.panel3.ResumeLayout(false);
