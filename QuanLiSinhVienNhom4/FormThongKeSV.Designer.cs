@@ -88,11 +88,11 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 5;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.17209F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.73977F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.35572F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.57293F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.57922F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxTieuChi, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.button1, 3, 1);
@@ -110,9 +110,9 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(193, 135);
+            this.label1.Location = new System.Drawing.Point(118, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 20);
+            this.label1.Size = new System.Drawing.Size(143, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tiêu chí thống kê";
             // 
@@ -125,17 +125,17 @@
             "Theo giới tính",
             "Theo quê quán",
             "Theo lớp"});
-            this.comboBoxTieuChi.Location = new System.Drawing.Point(383, 129);
+            this.comboBoxTieuChi.Location = new System.Drawing.Point(267, 129);
             this.comboBoxTieuChi.Name = "comboBoxTieuChi";
-            this.comboBoxTieuChi.Size = new System.Drawing.Size(184, 33);
+            this.comboBoxTieuChi.Size = new System.Drawing.Size(348, 33);
             this.comboBoxTieuChi.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(573, 115);
+            this.button1.Location = new System.Drawing.Point(621, 115);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 60);
+            this.button1.Size = new System.Drawing.Size(170, 60);
             this.button1.TabIndex = 2;
             this.button1.Text = "Thống kê";
             this.button1.UseVisualStyleBackColor = true;

@@ -73,7 +73,17 @@ namespace QuanLiSinhVienNhom4
                 chartThongKe.Series.Add(series);
                 chartThongKe.ChartAreas[0].AxisX.Title = "Nhóm";
                 chartThongKe.ChartAreas[0].AxisY.Title = "Số lượng";
+                chartThongKe.ChartAreas[0].AxisX.Title = "Nhóm";
+                chartThongKe.ChartAreas[0].AxisY.Title = "Số lượng";
+                chartThongKe.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
+                chartThongKe.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Arial", 8);
+                chartThongKe.ChartAreas[0].AxisX.Interval = 1;
+                chartThongKe.ChartAreas[0].AxisX.IsLabelAutoFit = true;
 
+                // Bật scroll nếu số lượng nhóm quá nhiều
+                chartThongKe.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+                chartThongKe.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
+                chartThongKe.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
             }
         }
 
