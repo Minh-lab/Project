@@ -18,9 +18,8 @@ namespace QuanLiSinhVienNhom4
         {
             InitializeComponent();
         }
-        string chuoilienket = "Data Source= DESKTOP-N04KL08\\SQLEXPRESS01;" +
-            "Initial Catalog=quanlysinhvien;" +
-            "Integrated Security=True;";
+        string chuoilienket = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" +
+            " Initial Catalog = quanlisinhvien; Integrated Security = true";
         SqlConnection conn = null;
 
         DataTable Load_SQL(string sql)
@@ -37,8 +36,12 @@ namespace QuanLiSinhVienNhom4
 
         private void fdanhsachgiangvien_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM Giangvien " +
-                "left JOIN Khoa ON Giangvien.makhoa = Khoa.makhoa;";
+            string sql = "SELECT giangvien.magiangvien, giangvien.tengiangvien, giangvien.makhoa, " +
+             "khoa.tenkhoa, giangvien.sodienthoai, giangvien.diachi, " +
+             "giangvien.gioitinh, giangvien.ngaysinh " +
+             "FROM giangvien " +
+             "LEFT JOIN khoa ON giangvien.makhoa = khoa.makhoa;";
+
             dgv_giangvien.DataSource = Load_SQL(sql);
         }
 

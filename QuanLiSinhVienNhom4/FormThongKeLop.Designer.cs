@@ -70,8 +70,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.thongke);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(1146, 455);
-            this.splitContainer1.SplitterDistance = 200;
+            this.splitContainer1.Size = new System.Drawing.Size(1152, 426);
+            this.splitContainer1.SplitterDistance = 187;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -93,8 +93,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.chartthongke);
-            this.splitContainer2.Size = new System.Drawing.Size(1146, 200);
-            this.splitContainer2.SplitterDistance = 615;
+            this.splitContainer2.Size = new System.Drawing.Size(1152, 187);
+            this.splitContainer2.SplitterDistance = 618;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -163,7 +163,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartthongke.Series.Add(series1);
-            this.chartthongke.Size = new System.Drawing.Size(526, 200);
+            this.chartthongke.Size = new System.Drawing.Size(529, 187);
             this.chartthongke.TabIndex = 0;
             this.chartthongke.Text = "chart1";
             // 
@@ -178,7 +178,7 @@
             this.thongke.Name = "thongke";
             this.thongke.RowHeadersWidth = 62;
             this.thongke.RowTemplate.Height = 28;
-            this.thongke.Size = new System.Drawing.Size(1146, 250);
+            this.thongke.Size = new System.Drawing.Size(1152, 234);
             this.thongke.TabIndex = 1;
             // 
             // dataGridView1
@@ -190,18 +190,19 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1146, 250);
+            this.dataGridView1.Size = new System.Drawing.Size(1152, 234);
             this.dataGridView1.TabIndex = 0;
             // 
             // FormThongKeLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 455);
+            this.ClientSize = new System.Drawing.Size(1152, 426);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormThongKeLop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

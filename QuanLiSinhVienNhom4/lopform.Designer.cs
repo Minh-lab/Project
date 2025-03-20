@@ -504,7 +504,7 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.08968F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.91031F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 376F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 190);
@@ -519,9 +519,9 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(727, 3);
+            this.button1.Location = new System.Drawing.Point(1030, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 28);
+            this.button1.Size = new System.Drawing.Size(174, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Thống kê";
             this.button1.UseVisualStyleBackColor = false;
