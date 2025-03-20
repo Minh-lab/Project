@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiSinhVienNhom4;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp6
@@ -19,7 +20,7 @@ namespace WindowsFormsApp6
             InitializeComponent();
         }
         string chuoiketnoi = "Data Source = LAPTOP-UPFI3FMF\\ASADAS; " +
-            "Initial Catalog = QLSV; " +
+            "Initial Catalog = quanlisinhvien; " +
             "User ID = sa; Password = khacsy0; ";
         SqlConnection conn = null;
         private void Form2_Load(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace WindowsFormsApp6
 
         private void LoadTRIM()
         {
-            string sql = "select * FROM MONHOC";
+            string sql = "select * FROM monhoc";
 
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
@@ -62,7 +63,7 @@ namespace WindowsFormsApp6
         {
             try
             {
-                string sql = "SELECT * FROM MONHOC";
+                string sql = "SELECT * FROM monhoc";
                 SqlDataAdapter daSV = new SqlDataAdapter(sql, conn);
                 DataTable dt = new DataTable();
                 daSV.Fill(dt);
@@ -75,7 +76,7 @@ namespace WindowsFormsApp6
         }
         private void LoadKhoa()
         {
-            string sql = "select * from KHOA";
+            string sql = "select * from khoa";
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
@@ -91,7 +92,7 @@ namespace WindowsFormsApp6
                 }
             }
             cbK.DataSource = dt;
-            cbK.DisplayMember = "MaK";
+            cbK.DisplayMember = "makhoa";
             cbK.SelectedIndex = -1;
         }
         public event Action DataUpdated;
@@ -108,7 +109,7 @@ namespace WindowsFormsApp6
             {
                 return;
             }
-            string checkSql = "SELECT COUNT(*) FROM DIEM WHERE MaMH = @MaMH";
+            string checkSql = "SELECT COUNT(*) FROM diemthi WHERE mamonhoc = @MaMH";
             using (SqlCommand cmd = new SqlCommand(checkSql, conn))
             {
                 cmd.Parameters.AddWithValue("@MaMH", txbMMH.Text);
@@ -133,7 +134,7 @@ namespace WindowsFormsApp6
                     }
 
                     string maMH = row.Cells[0].Value.ToString();
-                    string sql = "DELETE FROM MONHOC WHERE MaMH = @MaMH";
+                    string sql = "DELETE FROM monhoc WHERE mamonhoc = @MaMH";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -155,12 +156,13 @@ namespace WindowsFormsApp6
             txbHSDQT.Clear();
             txbHSDT.Clear();
             cbK.Text = "";
+            originalDataTable = ((DataTable)dgvMH.DataSource).Copy();
         }
 
 
         private void LoadMaGiangVien()
         {
-            string sql = "select * from GIANGVIEN";
+            string sql = "select * from giangvien";
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
@@ -176,7 +178,7 @@ namespace WindowsFormsApp6
                 }
             }
             cbGV.DataSource = dt;
-            cbGV.DisplayMember = "TenGV";
+            cbGV.DisplayMember = "tengiangvien";
             cbGV.SelectedIndex = -1;
         }
         private void btnT_Click(object sender, EventArgs e)
@@ -186,7 +188,7 @@ namespace WindowsFormsApp6
                 MessageBox.Show("Vui long nhap day du thong tin", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string sqlcheck = "select count(*) from MONHOC where MaMH = @MaMH or TenMH = @TenMH";
+            string sqlcheck = "select count(*) from monhoc where mamonhoc = @MaMH or TenMH = @TenMH";
             using (SqlCommand cmdd = new SqlCommand(sqlcheck, conn))
             {
 
@@ -210,14 +212,14 @@ namespace WindowsFormsApp6
                 MessageBox.Show("Vui long nhap so hop le cho diem", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string sql = "insert into MONHOC (MaMH,TenMH,MaK,SoTinChi,TenGV,HSDiemQT,HSDiemT)" +
-                " values (@MaMH,@TenMH,@MaK,@SoTinChi,@TenGV,@HSDiemQT,@HSDiemT)";
+            string sql = "insert into MONHOC (mamonhoc,TenMH,MaK,SoTinChi,TenGV,HSDiemQT,HSDiemT)" +
+                " values (@mamonhoc,@TenMH,@MaK,@SoTinChi,@TenGV,@HSDiemQT,@HSDiemT)";
 
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
 
-                cmd.Parameters.AddWithValue("@MaMH", txbMMH.Text);
+                cmd.Parameters.AddWithValue("@mamonhoc", txbMMH.Text);
                 cmd.Parameters.AddWithValue("@TenMH", txbTenMH.Text);
                 cmd.Parameters.AddWithValue("@MaK", cbK.Text);
                 cmd.Parameters.AddWithValue("@SoTinChi", txbSTC.Text);
@@ -240,6 +242,7 @@ namespace WindowsFormsApp6
             txbTenMH.Clear();
             txbHSDQT.Clear();
             txbHSDT.Clear();
+            originalDataTable = ((DataTable)dgvMH.DataSource).Copy();
         }
 
         private void btnS_Click(object sender, EventArgs e)
@@ -256,7 +259,7 @@ namespace WindowsFormsApp6
                 return;
             }
             string sql = "update MONHOC set TenMH = @TenMH,MaK = @MaK,SoTinChi = @SoTinChi, TenGV = @TenGV , HSDiemQT = @HSDiemQT, HSDiemT = @HSDiemT where MaMH = @MaMH;" +
-                 " UPDATE DIEM SET TenMH = @TenMH WHERE MaMH = @MaMH;";
+                 " UPDATE DIEM SET TenMH = @TenMH WHERE mamonhoc = @MaMH;";
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 cmd.Parameters.AddWithValue("@MaMH", txbMMH.Text);
@@ -274,7 +277,7 @@ namespace WindowsFormsApp6
                 }
                 DataUpdated?.Invoke();
             }
-
+            originalDataTable = ((DataTable)dgvMH.DataSource).Copy();
         }
 
         private void dgvMH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -351,33 +354,13 @@ namespace WindowsFormsApp6
 
         private void cbGV_Validating(object sender, CancelEventArgs e)
         {
-            string input = cbGV.Text.Trim();
-            if (string.IsNullOrEmpty(input))
-            {
-                return;
-            }
-            bool exists = false;
 
-
-            foreach (var item in cbGV.Items)
-            {
-                DataRowView row = item as DataRowView;
-                if (row != null && row["TenGV"].ToString() == input)
-                {
-                    exists = true;
-                    break;
-                }
-            }
-
-
-            if (!exists)
-            {
-                MessageBox.Show("Mã môn học không hợp lệ! Vui lòng nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Cancel = true;
-            }
         }
 
-
-
+        private void btnTke_Click(object sender, EventArgs e)
+        {
+           FormTkeMon formTkeMon = new FormTkeMon();    
+           formTkeMon.ShowDialog();
+        }
     }
 }

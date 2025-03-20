@@ -159,8 +159,8 @@ namespace QuanLiSinhVienNhom4
                 COUNT(CASE WHEN DanhGia = 'Dat' THEN 1 END) AS SoSVDat,
                 COUNT(CASE WHEN DanhGia = 'Truot' THEN 1 END) AS SoSVTruot,
                 COUNT(*) AS TongSoSV
-            FROM DIEM
-            WHERE MaL = @MaL AND MaMH = @MaMH";
+            FROM diemthi
+            WHERE MaL = @MaL AND mamonhoc = @MaMH";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@MaL", maLop);
@@ -209,7 +209,7 @@ namespace QuanLiSinhVienNhom4
                 try
                 {
                     DataRowView selectedRow = (DataRowView)cbLop.SelectedItem;
-                    maKhoa = selectedRow["MaK"].ToString().Trim();
+                    maKhoa = selectedRow["makhoa"].ToString().Trim();
                     LoadMaMonHoc();
 
                 }
@@ -225,7 +225,7 @@ namespace QuanLiSinhVienNhom4
             if (cbLop1.SelectedIndex != -1 && cbLop1.SelectedItem != null)
             {
                 DataRowView selectedRow = (DataRowView)cbLop1.SelectedItem;
-                maKhoa = selectedRow["MaK"].ToString().Trim();
+                maKhoa = selectedRow["makhoa"].ToString().Trim();
 
             }
         }
@@ -283,11 +283,11 @@ namespace QuanLiSinhVienNhom4
             {
                 string sql = @"
             SELECT MH.TenMH, 
-                COUNT(D.MaSV) AS TongSoSV,
+                COUNT(D.masinhvien) AS TongSoSV,
                 COUNT(CASE WHEN D.DanhGia = 'Dat' THEN 1 END) AS SoSVDat,
                 COUNT(CASE WHEN D.DanhGia = 'Truot' THEN 1 END) AS SoSVChuaDat
-            FROM MONHOC MH
-            LEFT JOIN DIEM D ON MH.MaMH = D.MaMH AND D.MaL = @MaL
+            FROM monhoc MH
+            LEFT JOIN diemthi D ON MH.mamonhoc = D.mamonhoc AND D.MaL = @MaL
             WHERE MH.MaK = @MaK
             GROUP BY MH.TenMH";
 
@@ -382,15 +382,15 @@ namespace QuanLiSinhVienNhom4
             {
                 string sql = @"
             SELECT 
-                L.MaL,
+                L.malop,
                 AVG(CAST(D.DiemTK AS FLOAT)) AS DiemTrungBinh,
                 MAX(D.DiemTK) AS DiemCaoNhat,
                 MIN(D.DiemTK) AS DiemThapNhat,
-                COUNT(D.MaSV) AS SoSinhVien
-            FROM LOP L
-            LEFT JOIN DIEM D ON L.MaL = D.MaL AND D.MaMH = @MaMH
-            WHERE L.MaK = @MaK
-            GROUP BY L.MaL";
+                COUNT(D.masinhvien) AS SoSinhVien
+            FROM lop L
+            LEFT JOIN diemthi D ON L.malop = D.MaL AND D.mamonhoc = @MaMH
+            WHERE L.makhoa = @MaK
+            GROUP BY L.malop";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@MaMH", maMon);
@@ -399,7 +399,7 @@ namespace QuanLiSinhVienNhom4
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    string maLop = reader["MaL"].ToString().Trim();
+                    string maLop = reader["malop"].ToString().Trim();
 
                     // Xử lý giá trị NULL có thể có từ LEFT JOIN
                     double diemTB = reader["DiemTrungBinh"] != DBNull.Value
@@ -440,6 +440,6 @@ namespace QuanLiSinhVienNhom4
             }
         }
 
-        
+
     }
 }
