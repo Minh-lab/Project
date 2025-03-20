@@ -30,5 +30,11 @@ namespace QuanLiSinhVienNhom4
                 quanlilop.Show();
 
         }
+
+        private void FormQL_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
+
+        }
     }
 }
