@@ -19,7 +19,7 @@ namespace QuanLiSinhVienNhom4
             InitializeComponent();
             DataUpdated?.Invoke();
         }
-        string chuoiketnoi = "Data Source=LAPTOP-UPFI3FMF\\ASADAS;Initial Catalog=quanlisinhvien;User Id = sa; Password = khacsy0;";
+        string chuoiketnoi = "Data Source=LAPTOP-UPFI3FMF\\ASADAS;Initial Catalog=quanlisinhvien;User ID = sa; Password = khacsy0;";
         SqlConnection conn = null;
         private void FormTkeDiem_Load(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace QuanLiSinhVienNhom4
 
         private void LoadMaMonHoc()
         {
-            string sql = "select * FROM MONHOC where MaK = @MaK";
+            string sql = "select * FROM monhoc where MaK = @MaK";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@MaK", maKhoa);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -51,12 +51,12 @@ namespace QuanLiSinhVienNhom4
             }
             cbMon.DataSource = dt;
             cbMon.DisplayMember = "TenMH";
-            cbMon.ValueMember = "MaMH";
+            cbMon.ValueMember = "mamonhoc";
             cbMon.SelectedIndex = -1;
         }
         private void LoadMaMonHoc1()
         {
-            string sql = "select * FROM MONHOC";
+            string sql = "select * FROM monhoc";
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -72,13 +72,13 @@ namespace QuanLiSinhVienNhom4
             }
             cbMon2.DataSource = dt;
             cbMon2.DisplayMember = "TenMH";
-            cbMon2.ValueMember = "MaMH";
+            cbMon2.ValueMember = "mamonhoc";
             cbMon2.SelectedIndex = -1;
         }
 
         private void LoadMaLop()
         {
-            string sql = "select * FROM LOP";
+            string sql = "select * FROM lop";
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             DataTable data = new DataTable();
@@ -95,12 +95,12 @@ namespace QuanLiSinhVienNhom4
                 }
             }
             cbLop.DataSource = dt;
-            cbLop.DisplayMember = "MaL";
-            cbLop.ValueMember = "MaL";
+            cbLop.DisplayMember = "malop";
+            cbLop.ValueMember = "malop";
             cbLop.SelectedIndex = -1;
             cbLop1.DataSource = data;
-            cbLop1.DisplayMember = "MaL";
-            cbLop1.ValueMember = "MaL";
+            cbLop1.DisplayMember = "malop";
+            cbLop1.ValueMember = "malop";
             cbLop1.SelectedIndex = -1;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -440,14 +440,6 @@ namespace QuanLiSinhVienNhom4
             }
         }
 
-        private void dgvTkeD_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
