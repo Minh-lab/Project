@@ -151,6 +151,7 @@
             // 
             // chartthongke
             // 
+            chartArea1.AxisX.MajorGrid.Enabled = false;
             chartArea1.Name = "ChartArea1";
             this.chartthongke.ChartAreas.Add(chartArea1);
             this.chartthongke.Dock = System.Windows.Forms.DockStyle.Fill;
