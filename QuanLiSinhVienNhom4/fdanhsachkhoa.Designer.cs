@@ -1,4 +1,4 @@
-﻿namespace btl
+﻿namespace QuanLiSinhVienNhom4
 {
     partial class fdanhsachkhoa
     {

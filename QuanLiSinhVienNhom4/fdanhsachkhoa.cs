@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace btl
+namespace QuanLiSinhVienNhom4
 {
     public partial class fdanhsachkhoa: Form
     {
