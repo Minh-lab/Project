@@ -36,5 +36,11 @@ namespace QuanLiSinhVienNhom4
             pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
 
         }
+
+        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fdanhsachgiangvien frmgiangvien = new fdanhsachgiangvien();
+            frmgiangvien.ShowDialog();
+        }
     }
 }

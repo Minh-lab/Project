@@ -33,6 +33,7 @@
             this.sinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.khoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,8 @@
             // 
             this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sinhViênToolStripMenuItem,
-            this.lớpToolStripMenuItem});
+            this.lớpToolStripMenuItem,
+            this.khoaToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
             this.quảnLýToolStripMenuItem.Text = "Quản Lý";
@@ -61,14 +63,14 @@
             // sinhViênToolStripMenuItem
             // 
             this.sinhViênToolStripMenuItem.Name = "sinhViênToolStripMenuItem";
-            this.sinhViênToolStripMenuItem.Size = new System.Drawing.Size(185, 34);
+            this.sinhViênToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.sinhViênToolStripMenuItem.Text = "Sinh viên";
             this.sinhViênToolStripMenuItem.Click += new System.EventHandler(this.sinhViênToolStripMenuItem_Click);
             // 
             // lớpToolStripMenuItem
             // 
             this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
-            this.lớpToolStripMenuItem.Size = new System.Drawing.Size(185, 34);
+            this.lớpToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.lớpToolStripMenuItem.Text = "Lớp";
             this.lớpToolStripMenuItem.Click += new System.EventHandler(this.lớpToolStripMenuItem_Click);
             // 
@@ -81,6 +83,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // khoaToolStripMenuItem
+            // 
+            this.khoaToolStripMenuItem.Name = "khoaToolStripMenuItem";
+            this.khoaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.khoaToolStripMenuItem.Text = "Khoa";
+            this.khoaToolStripMenuItem.Click += new System.EventHandler(this.khoaToolStripMenuItem_Click);
             // 
             // FormQL
             // 
@@ -111,5 +120,6 @@
         private System.Windows.Forms.ToolStripMenuItem sinhViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem khoaToolStripMenuItem;
     }
 }
