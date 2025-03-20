@@ -35,7 +35,7 @@ namespace QuanLiSinhVienNhom4
         }
         private void fdanhsachkhoa_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT MaGV, Hoten FROM Giangvien;";
+            string sql = "SELECT magiangvien, tengiangvien FROM giangvien;";
             conn = new SqlConnection(chuoilienket);
             conn.Open();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
@@ -43,12 +43,12 @@ namespace QuanLiSinhVienNhom4
             da.Fill(dt);
 
             cb_matruongkhoa.DataSource = dt;
-            cb_matruongkhoa.DisplayMember = "MaGV"; // Hiển thị mã giảng viên
-            cb_matruongkhoa.ValueMember = "Hoten";  // Giá trị là họ tên
+            cb_matruongkhoa.DisplayMember = "magianvien"; // Hiển thị mã giảng viên
+            cb_matruongkhoa.ValueMember = "tengiangvien";  // Giá trị là họ tên
             tb_tentruongkhoa.Text = cb_matruongkhoa.SelectedValue?.ToString();
 
-            sql = "SELECT Khoa.Makhoa, Khoa.Tenkhoa, Khoa.Matruongkhoa, Giangvien.Hoten FROM Khoa " +
-                "LEft JOIN Giangvien ON Khoa.Matruongkhoa = Giangvien.MaGV;";
+            sql = "SELECT khoa.makhoa, khoa.tenkhoa, khoa.matruongkhoa, giangvien.tengiangvien FROM khoa " +
+                "LEft JOIN giangvien ON khoa.matruongkhoa = giangvien.magiangvien;";
             Load_dgv(sql);
 
             cb_matruongkhoa.SelectedIndex = -1;
@@ -81,11 +81,11 @@ namespace QuanLiSinhVienNhom4
 
         void Xoakhoa(string Makhoa)
         {
-            string query = "delete from khoa where MaKhoa=@Makhoa";
+            string query = "delete from khoa where makhoa=@makhoa";
             conn = new SqlConnection(chuoilienket);
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@Makhoa", Makhoa);
+            cmd.Parameters.AddWithValue("@makhoa", Makhoa);
 
             cmd.ExecuteNonQuery();
         }
@@ -108,14 +108,14 @@ namespace QuanLiSinhVienNhom4
                 return;
             }    
 
-            string sql = "insert Khoa values (@Makhoa,@Tenkhoa,@Matruongkhoa);";
+            string sql = "insert khoa values (@makhoa,@tenkhoa,@matruongkhoa);";
             conn = new SqlConnection(chuoilienket);
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@Makhoa", tb_makhoa.Text);
-            cmd.Parameters.AddWithValue("@Tenkhoa", tb_tenkhoa.Text);
-            cmd.Parameters.AddWithValue("@Matruongkhoa", cb_matruongkhoa.Text);
+            cmd.Parameters.AddWithValue("@makhoa", tb_makhoa.Text);
+            cmd.Parameters.AddWithValue("@tenkhoa", tb_tenkhoa.Text);
+            cmd.Parameters.AddWithValue("@matruongkhoa", cb_matruongkhoa.Text);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -129,14 +129,14 @@ namespace QuanLiSinhVienNhom4
         //Sửa
         private void bt_sua_Click(object sender, EventArgs e)
         {
-            string sql = "update Khoa set Tenkhoa=@Tenkhoa,Truongkhoa=@Truongkhoa where Makhoa=@Makhoa;";
+            string sql = "update khoa set tenkhoa=@tenkhoa,matruongkhoa=@matruongkhoa where makhoa=@makhoa;";
             conn = new SqlConnection(chuoilienket);
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("@Makhoa", tb_makhoa.Text);
-            cmd.Parameters.AddWithValue("@Tenkhoa", tb_tenkhoa.Text);
-            cmd.Parameters.AddWithValue("@Truongkhoa", tb_tentruongkhoa.Text);
+            cmd.Parameters.AddWithValue("@makhoa", tb_makhoa.Text);
+            cmd.Parameters.AddWithValue("@tenkhoa", tb_tenkhoa.Text);
+            cmd.Parameters.AddWithValue("@matruongkhoa", tb_tentruongkhoa.Text);
 
             cmd.ExecuteNonQuery();
             fdanhsachkhoa_Load(sender, e);
@@ -182,19 +182,19 @@ namespace QuanLiSinhVienNhom4
         //Tìm kiếm
         private void bt_timkiem_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT Khoa.Makhoa, Khoa.Tenkhoa, Khoa.Matruongkhoa, Giangvien.Hoten FROM Khoa " +
-                "LEft JOIN Giangvien ON Khoa.Matruongkhoa = Giangvien.MaGV " +
-                "WHERE Khoa.Makhoa LIKE @Makhoa OR " +
-                "Khoa.Tenkhoa LIKE @Tenkhoa OR " +
-                "Khoa.Matruongkhoa LIKE @Matruongkhoa";
+            string sql = "SELECT khoa.makhoa, khoa.tenkhoa, khoa.matruongkhoa, giangvien.tengiangvien FROM khoa " +
+                "LEft JOIN giangvien ON khoa.matruongkhoa = giangvien.magianvien " +
+                "WHERE khoa.makhoa LIKE @makhoa OR " +
+                "khoa.tenkhoa LIKE @tenkhoa OR " +
+                "khoa.matruongkhoa LIKE @matruongkhoa";
 
             conn = new SqlConnection(chuoilienket);
             conn.Open();
             SqlDataAdapter da = new SqlDataAdapter(sql, conn);
 
-            da.SelectCommand.Parameters.AddWithValue("@Makhoa", string.IsNullOrEmpty(tb_makhoa.Text) ? "" : "%" + tb_makhoa.Text + "%");
-            da.SelectCommand.Parameters.AddWithValue("@Tenkhoa", string.IsNullOrEmpty(tb_tenkhoa.Text) ? "" : "%" + tb_tenkhoa.Text + "%");
-            da.SelectCommand.Parameters.AddWithValue("@Matruongkhoa", string.IsNullOrEmpty(cb_matruongkhoa.Text) ? "" : "%" + cb_matruongkhoa.Text + "%");
+            da.SelectCommand.Parameters.AddWithValue("@makhoa", string.IsNullOrEmpty(tb_makhoa.Text) ? "" : "%" + tb_makhoa.Text + "%");
+            da.SelectCommand.Parameters.AddWithValue("@tenkhoa", string.IsNullOrEmpty(tb_tenkhoa.Text) ? "" : "%" + tb_tenkhoa.Text + "%");
+            da.SelectCommand.Parameters.AddWithValue("@matruongkhoa", string.IsNullOrEmpty(cb_matruongkhoa.Text) ? "" : "%" + cb_matruongkhoa.Text + "%");
 
             DataTable dt = new DataTable();
             da.Fill(dt);

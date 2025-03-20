@@ -37,10 +37,16 @@ namespace QuanLiSinhVienNhom4
 
         }
 
-        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void giảngViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fdanhsachgiangvien frmgiangvien = new fdanhsachgiangvien();
-            frmgiangvien.ShowDialog();
+            frmgiangvien.Show();
+        }
+
+        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fdanhsachkhoa frmdanhsachkhoa = new fdanhsachkhoa();
+            frmdanhsachkhoa.Show();
         }
     }
 }
