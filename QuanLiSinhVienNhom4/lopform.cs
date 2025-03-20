@@ -14,7 +14,8 @@ using QuanLiSinhVienNhom4;
 
 namespace QuanLiSinhVienNhom4
 {
-    public partial class lopform : FormQL
+    public partial class lopform : System.Windows.Forms.Form
+
     {
         public string chuoiketnoi = "Data Source=DESKTOP-DOFGP4J ;Initial Catalog=quanlisinhvien;Integrated Security=True;";
 
