@@ -68,7 +68,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(48, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
@@ -77,7 +77,7 @@
             this.cbK.FormattingEnabled = true;
             this.cbK.Location = new System.Drawing.Point(147, 52);
             this.cbK.Name = "cbK";
-            this.cbK.Size = new System.Drawing.Size(233, 24);
+            this.cbK.Size = new System.Drawing.Size(233, 28);
             this.cbK.TabIndex = 2;
             // 
             // button2
