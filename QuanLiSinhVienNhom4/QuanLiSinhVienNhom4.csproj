@@ -48,17 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fdanhsachgiangvien.cs">
+    <Compile Include="fdanhsachgiangvien1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fdanhsachgiangvien.Designer.cs">
-      <DependentUpon>fdanhsachgiangvien.cs</DependentUpon>
+    <Compile Include="fdanhsachgiangvien1.Designer.cs">
+      <DependentUpon>fdanhsachgiangvien1.cs</DependentUpon>
     </Compile>
-    <Compile Include="fdanhsachkhoa.cs">
+    <Compile Include="fdanhsachkhoa1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fdanhsachkhoa.Designer.cs">
-      <DependentUpon>fdanhsachkhoa.cs</DependentUpon>
+    <Compile Include="fdanhsachkhoa1.Designer.cs">
+      <DependentUpon>fdanhsachkhoa1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDiem.cs">
       <SubType>Form</SubType>
@@ -122,11 +122,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fdanhsachgiangvien.resx">
-      <DependentUpon>fdanhsachgiangvien.cs</DependentUpon>
+    <EmbeddedResource Include="fdanhsachgiangvien1.resx">
+      <DependentUpon>fdanhsachgiangvien1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fdanhsachkhoa.resx">
-      <DependentUpon>fdanhsachkhoa.cs</DependentUpon>
+    <EmbeddedResource Include="fdanhsachkhoa1.resx">
+      <DependentUpon>fdanhsachkhoa1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDiem.resx">
       <DependentUpon>FormDiem.cs</DependentUpon>

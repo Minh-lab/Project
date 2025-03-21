@@ -46,52 +46,39 @@ namespace QuanLiSinhVienNhom4
         {
             try
             {
-                string query = "insert into lop values(@malop,@tenlop, @makhoa ,@magiangvien, @siso)";
-                if (txtmalop.Text != "" && txttenlop.Text != "" && txtsiso.Text != "")
+                if (txtmalop.Text == "" || txttenlop.Text == "" || cmbkhoa.Text == "" || cmbgvcn.Text == "" || txtsiso.Text == "")
                 {
-                    using (conn = new SqlConnection(chuoiketnoi))
-                    {
-                        conn.Open();
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@malop", txtmalop.Text);
-                        cmd.Parameters.AddWithValue("@tenlop", txttenlop.Text);
-                        cmd.Parameters.AddWithValue("@makhoa", cmbkhoa.Text);
-                        cmd.Parameters.AddWithValue("@magiangvien", cmbgvcn.Text);
-                        cmd.Parameters.AddWithValue("@siso", txtsiso.Text);
-                        cmd.ExecuteNonQuery();
-                    }
-                    dslop.DataSource = getDSLop();
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+                if (!int.TryParse(txtsiso.Text, out int siso))
                 {
-                    errorProvider1.Clear();
-                    if (txtmalop.Text == "")
-                        errorProvider1.SetError(txtmalop, "Không được để trống!");
-                    else
-                        errorProvider1.SetError(txtmalop, "");
-                    if (cmbkhoa.Text == "")
-                        errorProvider1.SetError(cmbgvcn, "Không được để trống!");
-                    else
-                        errorProvider1.SetError(cmbgvcn, "");
-                    if (cmbkhoa.Text == "")
-                        errorProvider1.SetError(cmbkhoa, "Không được để trống!");
-                    else
-                        errorProvider1.SetError(cmbkhoa, "");
-                    if (txtsiso.Text == "")
-                        errorProvider1.SetError(txtsiso, "Không được để trống!");
-                    else
-                        errorProvider1.SetError(txtsiso, "");
-                    if (txttenlop.Text == "")
-                        errorProvider1.SetError(txttenlop, "Không được để trống!");
-                    else
-                        errorProvider1.SetError(txttenlop, "");
+                    MessageBox.Show("Sĩ số phải là một số nguyên!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-            }
-            catch (SqlException) {
-                if (txttenlop.Text != "") 
-                 MessageBox.Show("Error", "Lớp đã có trong danh sách!");
+
+                string query = "INSERT INTO lop VALUES(@malop, @tenlop, @makhoa, @magiangvien, @siso)";
+                using (conn = new SqlConnection(chuoiketnoi))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@malop", txtmalop.Text);
+                    cmd.Parameters.AddWithValue("@tenlop", txttenlop.Text);
+                    cmd.Parameters.AddWithValue("@makhoa", cmbkhoa.Text);
+                    cmd.Parameters.AddWithValue("@magiangvien", cmbgvcn.Text);
+                    cmd.Parameters.AddWithValue("@siso", siso); // Đảm bảo là kiểu số nguyên
+
+                    cmd.ExecuteNonQuery();
                 }
+
+                dslop.DataSource = getDSLop();
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message, "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnsua_Click(object sender, EventArgs e)
         {
             string query = "UPDATE lop SET malop = @newMalop, tenlop = @tenlop, magiangvien = @magiangvien, makhoa = @makhoa, siso = @siso WHERE malop = @oldMalop";
