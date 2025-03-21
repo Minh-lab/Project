@@ -61,5 +61,11 @@ namespace QuanLiSinhVienNhom4
             FromMon formMon = new FromMon();
             formMon.Show();
         }
+
+        private void mônHọcToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FromMon formMon = new FromMon();
+            formMon.Show();
+        }
     }
 }

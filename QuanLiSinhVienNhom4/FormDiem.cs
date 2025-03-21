@@ -21,9 +21,9 @@ namespace QuanLiSinhVienNhom4
         private DataTable originalDataTable;
         public float HSDQT = 0, HSDT = 0;
 
-        string chuoiketnoi = "Data Source=LAPTOP-UPFI3FMF\\ASADAS; " +
+        string chuoiketnoi = "Data Source=DESKTOP-DOFGP4J; " +
             "Initial Catalog = quanlisinhvien; " +
-            "User ID = sa; Password = khacsy0; ";
+            "Integrated Security = true; ";
 
 
 
