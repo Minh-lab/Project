@@ -14,7 +14,7 @@ namespace QuanLiSinhVienNhom4
 {
     public partial class FormThongKeSV: Form
     {
-        string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" +
+        string chuoiketnoi = "Data Source = DESKTOP-DOFGP4J;" +
             " Initial Catalog = quanlisinhvien; Integrated Security = true";
         
         public FormThongKeSV()

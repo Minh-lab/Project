@@ -32,10 +32,10 @@
             this.dgvTkeMonHoc = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.cbK = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTkeMonHoc)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
@@ -96,20 +96,6 @@
             this.panel3.Size = new System.Drawing.Size(392, 237);
             this.panel3.TabIndex = 0;
             // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(28, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 55);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Thống kê ";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // cbK
             // 
             this.cbK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -139,13 +125,28 @@
             this.panel4.Size = new System.Drawing.Size(349, 237);
             this.panel4.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Location = new System.Drawing.Point(28, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 55);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Thống kê ";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormTkeMon
             // 
             this.ClientSize = new System.Drawing.Size(990, 509);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "FormTkeMon";
-            this.Load += new System.EventHandler(this.FormTkeDiem_Load);
+            this.Load += new System.EventHandler(this.FormTkeMon_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTkeMonHoc)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);

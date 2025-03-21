@@ -21,7 +21,7 @@ namespace QuanLiSinhVienNhom4
         }
         string chuoiketnoi = "Data Source=LAPTOP-UPFI3FMF\\ASADAS;Initial Catalog=quanlisinhvien;User ID = sa; Password = khacsy0;";
         SqlConnection conn = null;
-        private void FormTkeDiem_Load(object sender, EventArgs e)
+        private void FormTkeMon_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(chuoiketnoi);
             conn.Open();
@@ -130,5 +130,7 @@ namespace QuanLiSinhVienNhom4
                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+    
     }
 }
