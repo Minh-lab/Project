@@ -18,8 +18,7 @@ namespace QuanLiSinhVienNhom4
         {
             InitializeComponent();
         }
-        string chuoilienket = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" +
-            " Initial Catalog = quanlisinhvien; Integrated Security = true";
+        string chuoilienket = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS;Initial Catalog=quanlisinhvien;Integrated Security=True";
         SqlConnection conn = null;
 
         DataTable Load_SQL(string sql)

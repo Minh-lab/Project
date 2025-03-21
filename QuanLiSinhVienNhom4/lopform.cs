@@ -14,9 +14,10 @@ using QuanLiSinhVienNhom4;
 
 namespace QuanLiSinhVienNhom4
 {
-    public partial class lopform : FormQL
+    public partial class lopform : System.Windows.Forms.Form
+
     {
-        public string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS ;Initial Catalog=quanlisinhvien;Integrated Security=True;";
+        public string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" + "Initial Catalog=quanlisinhvien;" + "Integrated Security=True;";
 
         public SqlConnection conn = null;
 
@@ -46,7 +47,7 @@ namespace QuanLiSinhVienNhom4
             try
             {
                 string query = "insert into lop values(@malop,@tenlop, @makhoa ,@magiangvien, @siso)";
-                if (txtmalop.Text != "" && txtsiso.Text != "" && txtsiso.Text != "")
+                if (txtmalop.Text != "" && txttenlop.Text != "" && txtsiso.Text != "")
                 {
                     using (conn = new SqlConnection(chuoiketnoi))
                     {
@@ -93,21 +94,49 @@ namespace QuanLiSinhVienNhom4
             }
         private void btnsua_Click(object sender, EventArgs e)
         {
-            string query = "update lop set malop = @malop,tenlop = @tenlop, magiangvien = @magiangvien, makhoa = @makhoa, siso = @siso where malop = @malop";
-            using (conn = new SqlConnection(chuoiketnoi))
+            string query = "UPDATE lop SET malop = @newMalop, tenlop = @tenlop, magiangvien = @magiangvien, makhoa = @makhoa, siso = @siso WHERE malop = @oldMalop";
+            if (txtmalop.Text != "" && txttenlop.Text != "" && txtsiso.Text != "")
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (conn = new SqlConnection(chuoiketnoi))
                 {
-                    cmd.Parameters.AddWithValue("@malop", txtmalop.Text);
-                    cmd.Parameters.AddWithValue("@tenlop", txttenlop.Text);
-                    cmd.Parameters.AddWithValue("@makhoa", cmbkhoa.Text);
-                    cmd.Parameters.AddWithValue("@magiangvien", cmbgvcn.Text);
-                    cmd.Parameters.AddWithValue("@siso", txtsiso.Text);
-                    cmd.ExecuteNonQuery();
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@newMalop", txtmalop.Text);  // Mã lớp mới
+                        cmd.Parameters.AddWithValue("@oldMalop", dslop.SelectedRows[0].Cells["malop"].Value.ToString()); // Mã lớp cũ
+                        cmd.Parameters.AddWithValue("@tenlop", txttenlop.Text);
+                        cmd.Parameters.AddWithValue("@magiangvien", cmbgvcn.SelectedValue);
+                        cmd.Parameters.AddWithValue("@makhoa", cmbkhoa.SelectedValue);
+                        cmd.Parameters.AddWithValue("@siso", txtsiso.Text);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
+                dslop.DataSource = getDSLop();
             }
-            dslop.DataSource = getDSLop();
+                else
+                {
+                    errorProvider1.Clear();
+                    if (txtmalop.Text == "")
+                        errorProvider1.SetError(txtmalop, "Không được để trống!");
+                    else
+                        errorProvider1.SetError(txtmalop, "");
+                    if (cmbkhoa.Text == "")
+                        errorProvider1.SetError(cmbgvcn, "Không được để trống!");
+                    else
+                        errorProvider1.SetError(cmbgvcn, "");
+                    if (cmbkhoa.Text == "")
+                        errorProvider1.SetError(cmbkhoa, "Không được để trống!");
+                    else
+                        errorProvider1.SetError(cmbkhoa, "");
+                    if (txtsiso.Text == "")
+                        errorProvider1.SetError(txtsiso, "Không được để trống!");
+                    else
+                        errorProvider1.SetError(txtsiso, "");
+                    if (txttenlop.Text == "")
+                        errorProvider1.SetError(txttenlop, "Không được để trống!");
+                    else
+                        errorProvider1.SetError(txttenlop, "");
+                }
         }
 
         private void btnxoa_Click_1(object sender, EventArgs e)

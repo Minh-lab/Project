@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLiSinhVienNhom4;
+using WindowsFormsApp6;
 
 namespace QuanLiSinhVienNhom4
 {
@@ -36,6 +37,7 @@ namespace QuanLiSinhVienNhom4
 
         }
 
+
         private void giảngViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fdanhsachgiangvien frmgiangvien = new fdanhsachgiangvien();
@@ -46,6 +48,18 @@ namespace QuanLiSinhVienNhom4
         {
             fdanhsachkhoa frmdanhsachkhoa = new fdanhsachkhoa();
             frmdanhsachkhoa.Show();
+        }
+
+        private void điểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDiem formDiem = new FormDiem();
+            formDiem.Show();
+        }
+
+        private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FromMon formMon = new FromMon();
+            formMon.Show();
         }
     }
 }
