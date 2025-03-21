@@ -179,5 +179,17 @@ namespace QuanLiSinhVienNhom4
         {
 
         }
+
+        private void cb_makhoa_TextChanged(object sender, EventArgs e)
+        {
+            if (cb_makhoa.SelectedValue != null)
+            {
+                tb_khoa.Text = cb_makhoa.SelectedValue.ToString();
+            }
+            else
+            {
+                tb_khoa.Text = ""; // Nếu không có giá trị, để trống
+            }
+        }
     }
 }

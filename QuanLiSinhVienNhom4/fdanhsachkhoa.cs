@@ -42,7 +42,7 @@ namespace QuanLiSinhVienNhom4
             da.Fill(dt);
 
             cb_matruongkhoa.DataSource = dt;
-            cb_matruongkhoa.DisplayMember = "magianvien"; // Hiển thị mã giảng viên
+            cb_matruongkhoa.DisplayMember = "tengiangvien"; // Hiển thị mã giảng viên
             cb_matruongkhoa.ValueMember = "tengiangvien";  // Giá trị là họ tên
             tb_tentruongkhoa.Text = cb_matruongkhoa.SelectedValue?.ToString();
 

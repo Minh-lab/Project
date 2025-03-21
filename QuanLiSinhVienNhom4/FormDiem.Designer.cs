@@ -66,7 +66,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,7 +115,7 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
+            this.dt,
             this.Column7,
             this.Column8,
             this.Column9});
@@ -131,6 +131,7 @@
             this.dgvDSV.Size = new System.Drawing.Size(948, 278);
             this.dgvDSV.TabIndex = 1;
             this.dgvDSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSV_CellClick);
+            this.dgvDSV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSV_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
@@ -532,7 +533,7 @@
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "hoten";
+            this.Column2.DataPropertyName = "HoTen";
             this.Column2.FillWeight = 170F;
             this.Column2.HeaderText = "Họ Tên";
             this.Column2.MinimumWidth = 6;
@@ -541,7 +542,7 @@
             // 
             // Column10
             // 
-            this.Column10.DataPropertyName = "tenlop";
+            this.Column10.DataPropertyName = "MaL";
             this.Column10.FillWeight = 80F;
             this.Column10.HeaderText = "Lớp";
             this.Column10.MinimumWidth = 6;
@@ -559,7 +560,7 @@
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "tenmonhoc";
+            this.Column4.DataPropertyName = "TenMH";
             this.Column4.FillWeight = 160F;
             this.Column4.HeaderText = "Tên môn học";
             this.Column4.MinimumWidth = 6;
@@ -575,18 +576,18 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // Column6
+            // dt
             // 
-            this.Column6.DataPropertyName = "diemthi";
-            this.Column6.FillWeight = 80F;
-            this.Column6.HeaderText = "Điểm thi";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.dt.DataPropertyName = "DiemT";
+            this.dt.FillWeight = 80F;
+            this.dt.HeaderText = "Điểm thi";
+            this.dt.MinimumWidth = 6;
+            this.dt.Name = "dt";
+            this.dt.ReadOnly = true;
             // 
             // Column7
             // 
-            this.Column7.DataPropertyName = "diemtongket";
+            this.Column7.DataPropertyName = "DiemTK";
             this.Column7.FillWeight = 80F;
             this.Column7.HeaderText = "Điểm tổng kết ";
             this.Column7.MinimumWidth = 6;
@@ -595,7 +596,7 @@
             // 
             // Column8
             // 
-            this.Column8.DataPropertyName = "diemchu";
+            this.Column8.DataPropertyName = "DiemC";
             this.Column8.FillWeight = 80F;
             this.Column8.HeaderText = "Điểm chữ";
             this.Column8.MinimumWidth = 6;
@@ -604,7 +605,7 @@
             // 
             // Column9
             // 
-            this.Column9.DataPropertyName = "danhgia";
+            this.Column9.DataPropertyName = "DanhGia";
             this.Column9.FillWeight = 80F;
             this.Column9.HeaderText = "Đánh giá";
             this.Column9.MinimumWidth = 6;
@@ -681,7 +682,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;

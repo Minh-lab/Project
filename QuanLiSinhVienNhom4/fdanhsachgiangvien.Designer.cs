@@ -469,6 +469,7 @@
             this.cb_makhoa.Size = new System.Drawing.Size(508, 28);
             this.cb_makhoa.TabIndex = 6;
             this.cb_makhoa.ValueMember = "MaKhoa";
+            this.cb_makhoa.TextChanged += new System.EventHandler(this.cb_makhoa_TextChanged);
             // 
             // tb_khoa
             // 

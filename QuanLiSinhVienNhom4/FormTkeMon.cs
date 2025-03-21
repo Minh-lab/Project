@@ -19,9 +19,11 @@ namespace QuanLiSinhVienNhom4
             InitializeComponent();
             DataUpdated?.Invoke();
         }
-        string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS;Initial Catalog=quanlisinhvien;User ID = sa; Password = khacsy0;";
+        string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS; " +
+            "Initial Catalog = quanlisinhvien; " +
+            "Integrated Security = true; ";
         SqlConnection conn = null;
-        private void FormTkeDiem_Load(object sender, EventArgs e)
+        private void FormTkeMon_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(chuoiketnoi);
             conn.Open();
@@ -70,19 +72,19 @@ namespace QuanLiSinhVienNhom4
             DataGridViewTextBoxColumn colMaK = new DataGridViewTextBoxColumn();
             colMaK.Name = "MaK";
             colMaK.HeaderText = "Mã Khoa";
-            dgvTkeMon.Columns.Add(colMaK);
+            dgvTkeMonHoc.Columns.Add(colMaK);
 
             DataGridViewTextBoxColumn colTenK = new DataGridViewTextBoxColumn();
             colTenK.Name = "TenK";
             colTenK.HeaderText = "Tên Khoa";
-            dgvTkeMon.Columns.Add(colTenK);
+            dgvTkeMonHoc.Columns.Add(colTenK);
 
             DataGridViewTextBoxColumn colSoMH = new DataGridViewTextBoxColumn();
             colSoMH.Name = "SoMH";
             colSoMH.HeaderText = "Số Môn Học";
-            dgvTkeMon.Columns.Add(colSoMH);
+            dgvTkeMonHoc.Columns.Add(colSoMH);
 
-            dgvTkeMon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTkeMonHoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             try
             {
@@ -102,7 +104,7 @@ namespace QuanLiSinhVienNhom4
                 string sql = @"
         SELECT COUNT(*) AS SoMonHoc
         FROM monhoc
-        WHERE makhoa = @MaK";
+        WHERE MaK = @MaK";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@MaK", makhoa);
@@ -110,7 +112,7 @@ namespace QuanLiSinhVienNhom4
                 int soMonHoc = Convert.ToInt32(cmd.ExecuteScalar());
 
                 // Thêm dữ liệu vào DataGridView
-                dgvTkeMon.Rows.Add(makhoa, tenKhoa, soMonHoc);
+                dgvTkeMonHoc.Rows.Add(makhoa, tenKhoa, soMonHoc);
 
                 // Thông báo khi hoàn tất
                 if (soMonHoc > 0)
@@ -130,5 +132,7 @@ namespace QuanLiSinhVienNhom4
                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+    
     }
 }

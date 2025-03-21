@@ -19,9 +19,7 @@ namespace WindowsFormsApp6
         {
             InitializeComponent();
         }
-        string chuoiketnoi = "Data Source =DESKTOP-6EVU3R0\\SQLEXPRESS; " +
-            "Initial Catalog = quanlisinhvien; " +
-            "User ID = sa; Password = khacsy0; ";
+        string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" + "Initial Catalog=quanlisinhvien;" + "Integrated Security=True;";
         SqlConnection conn = null;
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -212,7 +210,7 @@ namespace WindowsFormsApp6
                 MessageBox.Show("Vui long nhap so hop le cho diem", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string sql = "insert into MONHOC (mamonhoc,TenMH,MaK,SoTinChi,TenGV,HSDiemQT,HSDiemT)" +
+            string sql = "insert into monhoc (mamonhoc,TenMH,MaK,SoTinChi,TenGV,HSDiemQT,HSDiemT)" +
                 " values (@mamonhoc,@TenMH,@MaK,@SoTinChi,@TenGV,@HSDiemQT,@HSDiemT)";
 
 
@@ -247,38 +245,67 @@ namespace WindowsFormsApp6
 
         private void btnS_Click(object sender, EventArgs e)
         {
-            double HSDiemQT = 0f, HSDiemT = 0f;
-            if (!double.TryParse(txbHSDQT.Text, out HSDiemQT))
-            {
-                MessageBox.Show("Vui long nhap so hop le cho diem", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (!double.TryParse(txbHSDT.Text, out HSDiemT))
-            {
-                MessageBox.Show("Vui long nhap so hop le cho diem", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string sql = "update MONHOC set TenMH = @TenMH,MaK = @MaK,SoTinChi = @SoTinChi, TenGV = @TenGV , HSDiemQT = @HSDiemQT, HSDiemT = @HSDiemT where MaMH = @MaMH;" +
-                 " UPDATE DIEM SET TenMH = @TenMH WHERE mamonhoc = @MaMH;";
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddWithValue("@MaMH", txbMMH.Text);
-                cmd.Parameters.AddWithValue("@TenMH", txbTenMH.Text);
-                cmd.Parameters.AddWithValue("@MaK", cbK.Text);
-                cmd.Parameters.AddWithValue("@SoTinChi", txbSTC.Text);
-                cmd.Parameters.AddWithValue("@TenGV", cbGV.Text);
-                cmd.Parameters.AddWithValue("@HSDiemQT", Math.Round(HSDiemQT, 1));
-                cmd.Parameters.AddWithValue("@HSDiemT", Math.Round(HSDiemT, 1));
-                int sodong = cmd.ExecuteNonQuery();
-                if (sodong > 0)
-                {
-                    LoadDataMonHoc();
+            double HSDiemQT = 0, HSDiemT = 0;
 
-                }
-                DataUpdated?.Invoke();
+            // Kiểm tra nhập liệu
+            if (string.IsNullOrWhiteSpace(txbMMH.Text) ||
+                string.IsNullOrWhiteSpace(txbTenMH.Text) ||
+                string.IsNullOrWhiteSpace(cbK.Text) ||
+                string.IsNullOrWhiteSpace(cbGV.Text) ||
+                string.IsNullOrWhiteSpace(txbSTC.Text) ||
+                !double.TryParse(txbHSDQT.Text, out HSDiemQT) ||
+                !double.TryParse(txbHSDT.Text, out HSDiemT))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ và hợp lệ tất cả các trường!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            originalDataTable = ((DataTable)dgvMH.DataSource).Copy();
+
+            string sql = @"UPDATE monhoc 
+                   SET TenMH = @TenMH, MaK = @MaK, SoTinChi = @SoTinChi, TenGV = @TenGV, HSDiemQT = @HSDiemQT, HSDiemT = @HSDiemT 
+                   WHERE mamonhoc = @MaMH; 
+                   UPDATE diemthi 
+                   SET TenMH = @TenMH 
+                   WHERE mamonhoc = @MaMH;";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaMH", txbMMH.Text.Trim());
+                    cmd.Parameters.AddWithValue("@TenMH", txbTenMH.Text.Trim());
+                    cmd.Parameters.AddWithValue("@MaK", cbK.Text.Trim());
+                    cmd.Parameters.AddWithValue("@SoTinChi", txbSTC.Text.Trim());
+                    cmd.Parameters.AddWithValue("@TenGV", cbGV.Text.Trim());
+                    cmd.Parameters.AddWithValue("@HSDiemQT", Math.Round(HSDiemQT, 1));
+                    cmd.Parameters.AddWithValue("@HSDiemT", Math.Round(HSDiemT, 1));
+
+                    // Mở kết nối trước khi thực thi lệnh
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+
+                    int sodong = cmd.ExecuteNonQuery();
+                    if (sodong > 0)
+                    {
+                        LoadDataMonHoc();
+                    }
+
+                    // Kiểm tra sự kiện trước khi gọi
+                    DataUpdated?.Invoke();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi cập nhật dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+
+            originalDataTable = ((DataTable)dgvMH.DataSource)?.Copy();
         }
+
 
         private void dgvMH_CellClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -316,7 +316,7 @@ namespace QuanLiSinhVienNhom4
             cbMMH.Text = dgvDSV.CurrentRow.Cells[3].Value.ToString();
             txbMH.Text = dgvDSV.CurrentRow.Cells[4].Value.ToString();
             txbDQT.Text = dgvDSV.CurrentRow.Cells[5].Value.ToString();
-            txbDT.Text = dgvDSV.CurrentRow.Cells[6].Value.ToString();
+            txbDT.Text = dgvDSV.CurrentRow.Cells["dt"].Value.ToString();
 
 
         }
@@ -468,6 +468,11 @@ namespace QuanLiSinhVienNhom4
                 MessageBox.Show("Mã sinh viên không hợp lệ! Vui lòng nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;
             }
+        }
+
+        private void dgvDSV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void cbMMH_Validating(object sender, CancelEventArgs e)

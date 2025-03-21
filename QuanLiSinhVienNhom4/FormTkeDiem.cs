@@ -19,21 +19,21 @@ namespace QuanLiSinhVienNhom4
             InitializeComponent();
             DataUpdated?.Invoke();
         }
-        string chuoiketnoi = "Data Source=DESKTOP-6EVU3R0\\SQLEXPRESS;Initial Catalog=quanlisinhvien;User ID = sa; Password = khacsy0;";
+        string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" + "Initial Catalog=quanlisinhvien;" + "Integrated Security=True;";
         SqlConnection conn = null;
         private void FormTkeDiem_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(chuoiketnoi);
             conn.Open();
             LoadMaLop();
-            cbMon.DataSource = null;
-            cbMon.Items.Clear();
+            //cbMon.DataSource = null;
+            //cbMon.Items.Clear();
             LoadMaMonHoc1();
         }
 
         private void LoadMaMonHoc()
         {
-            string sql = "select * FROM monhoc where MaK = @MaK";
+            string sql = "select TenMH FROM monhoc where MaK = @MaK";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@MaK", maKhoa);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -51,7 +51,7 @@ namespace QuanLiSinhVienNhom4
             }
             cbMon.DataSource = dt;
             cbMon.DisplayMember = "TenMH";
-            cbMon.ValueMember = "mamonhoc";
+            cbMon.ValueMember = "TenMH";
             cbMon.SelectedIndex = -1;
         }
         private void LoadMaMonHoc1()
@@ -440,6 +440,9 @@ namespace QuanLiSinhVienNhom4
             }
         }
 
+        private void cbMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

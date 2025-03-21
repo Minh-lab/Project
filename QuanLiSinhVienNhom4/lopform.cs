@@ -17,7 +17,7 @@ namespace QuanLiSinhVienNhom4
     public partial class lopform : System.Windows.Forms.Form
 
     {
-        public string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" + "Initial Catalog=quanlisinhvien;" + "Integrated Security=True;";
+        public string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" + "Initial Catalog=quanlisinhvien;" + "Integrated Security=True";
 
         public SqlConnection conn = null;
 
