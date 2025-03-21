@@ -21,7 +21,7 @@ namespace QuanLiSinhVienNhom4
 
         private void FormQL_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
+            //pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
 
         }
         private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)

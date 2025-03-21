@@ -19,7 +19,9 @@ namespace QuanLiSinhVienNhom4
             InitializeComponent();
             DataUpdated?.Invoke();
         }
-        string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" + "Initial Catalog=quanlisinhvien;" + "Integrated Security=True;";
+        string chuoiketnoi = "Data Source = LAPTOP-UPFI3FMF\\ASADAS; " +
+            "Initial Catalog = quanlisinhvien; " +
+            "User ID = sa; Password = khacsy0; ";
         SqlConnection conn = null;
         private void FormTkeDiem_Load(object sender, EventArgs e)
         {

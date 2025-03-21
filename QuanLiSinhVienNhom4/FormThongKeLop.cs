@@ -19,7 +19,9 @@ namespace QuanLiSinhVienNhom4
         {
             InitializeComponent();
         }
-        public string chuoiketnoi = "Data Source = DESKTOP-6EVU3R0\\SQLEXPRESS;" + "Initial Catalog=quanlisinhvien;" + "Integrated Security=True";
+        public string chuoiketnoi = "Data Source = LAPTOP-UPFI3FMF\\ASADAS; " +
+            "Initial Catalog = QLSV; " +
+            "User ID = sa; Password = khacsy0; ";
 
         public SqlConnection conn = null;
         private void cmbtieuchi_SelectedIndexChanged(object sender, EventArgs e)
