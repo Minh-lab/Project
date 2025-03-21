@@ -62,7 +62,7 @@ namespace QuanLiSinhVienNhom4
                 // Đổ dữ liệu vào ComboBox
                 cbbMALOP.DataSource = dt;
                 cbbMALOP.DisplayMember = "malop";  // Hiển thị Mã Lớp
-                cbbMALOP.ValueMember = "malop";   // Giá trị ẩn là Tên Lớp
+                cbbMALOP.ValueMember = "malop";   // Giá trị ẩn
                 cbbMALOP.SelectedIndex = -1;       // Không chọn gì mặc định
             }
             catch (Exception ex)
@@ -82,7 +82,7 @@ namespace QuanLiSinhVienNhom4
                     return;
                 }
                 string sql = "INSERT INTO sinhvien (masinhvien, hoten, gioitinh, ngaysinh, malop, diachi, quequan, sodienthoai)" +
-                    "VALUES (@masinhvien, @oten, @gioitinh, @ngaysinh, @malop, @diachi, @quequan, @sodienthoai)";
+                    "VALUES (@masinhvien, @hoten, @gioitinh, @ngaysinh, @malop, @diachi, @quequan, @sodienthoai)";
                 using (SqlCommand cmd = new SqlCommand(sql, ketnoi))
                 {
                     cmd.Parameters.AddWithValue("@masinhvien", tbMSV.Text);
@@ -189,14 +189,18 @@ namespace QuanLiSinhVienNhom4
         {
             try
             {
-                string keyword = Microsoft.VisualBasic.Interaction.InputBox("Nhập từ khóa tìm kiếm (Mã sinh viên hoặc họ tên):", "Tìm kiếm", "");
+                string keyword = Microsoft.VisualBasic.Interaction.InputBox("Nhập từ khóa tìm kiếm (Mã sinh viên, mã lớp hoặc họ tên):", "Tìm kiếm", "");
                 if (string.IsNullOrEmpty(keyword))
                 {
-                    Load(); ;
+                    Load();
                     return;
                 }
-                string sql = "Select masinhvien, hoten, gioitinh, ngaysinh, malop, diachi, quequan, sodienthoai from sinhvien" +
-                    "Inner join lop on sinhvien.malop = lop.malop" + "Where sinhvien.masinhvien like @keyword or lop.malop like @keyword";
+                string sql = "SELECT sinhvien.masinhvien, sinhvien.hoten, sinhvien.gioitinh, sinhvien.ngaysinh, " +
+                  "sinhvien.malop, sinhvien.diachi, sinhvien.quequan, sinhvien.sodienthoai " +
+                  "FROM sinhvien " +
+                  "INNER JOIN lop ON sinhvien.malop = lop.malop " +
+                  "WHERE sinhvien.masinhvien LIKE @keyword OR lop.malop LIKE @keyword OR sinhvien.hoten LIKE @keyword";
+
                 using (SqlCommand cmd = new SqlCommand(sql, ketnoi))
                 {
                     cmd.Parameters.AddWithValue ("@keyword","%" + keyword + "%");

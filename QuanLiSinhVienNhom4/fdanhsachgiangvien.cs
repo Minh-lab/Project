@@ -96,7 +96,14 @@ namespace QuanLiSinhVienNhom4
             tb_magiangvien.Text = dgv_giangvien.CurrentRow.Cells[0].Value.ToString().Trim();
             tb_hoten.Text = dgv_giangvien.CurrentRow.Cells[1].Value.ToString().Trim();
             cb_makhoa.Text = dgv_giangvien.CurrentRow.Cells[2].Value.ToString().Trim();
-            date_ngaysinh.Text = dgv_giangvien.CurrentRow.Cells[5].Value.ToString().Trim();
+            if (DateTime.TryParse(dgv_giangvien.CurrentRow.Cells[5].Value?.ToString(), out DateTime ngaySinh))
+            {
+                date_ngaysinh.Value = ngaySinh;
+            }
+            else
+            {
+                date_ngaysinh.Value = DateTime.Now; // hoặc giá trị mặc định khác
+            }
             tb_sdt.Text = dgv_giangvien.CurrentRow.Cells[6].Value.ToString().Trim();
             tb_diachi.Text = dgv_giangvien.CurrentRow.Cells[7].Value.ToString().Trim();
         }

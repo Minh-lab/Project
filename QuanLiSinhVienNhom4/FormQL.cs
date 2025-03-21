@@ -18,6 +18,11 @@ namespace QuanLiSinhVienNhom4
             InitializeComponent();
         }
 
+        private void FormQL_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
+
+        }
         private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSV formsv = new FormSV();
@@ -31,19 +36,13 @@ namespace QuanLiSinhVienNhom4
 
         }
 
-        private void FormQL_Load(object sender, EventArgs e)
-        {
-            pictureBox1.Image = Image.FromFile("D:\\Ảnh\\quanlysinhvien.jpg");
-
-        }
-
         private void giảngViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fdanhsachgiangvien frmgiangvien = new fdanhsachgiangvien();
             frmgiangvien.Show();
         }
 
-        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void khoaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             fdanhsachkhoa frmdanhsachkhoa = new fdanhsachkhoa();
             frmdanhsachkhoa.Show();
