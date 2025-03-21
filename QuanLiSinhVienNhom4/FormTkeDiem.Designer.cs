@@ -64,7 +64,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1270, 241);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(899, 241);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // panel1
@@ -80,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(890, 235);
+            this.panel1.Size = new System.Drawing.Size(628, 235);
             this.panel1.TabIndex = 0;
             // 
             // cbMon2
@@ -92,8 +92,9 @@
             this.cbMon2.FormattingEnabled = true;
             this.cbMon2.Location = new System.Drawing.Point(324, 155);
             this.cbMon2.Name = "cbMon2";
-            this.cbMon2.Size = new System.Drawing.Size(563, 24);
+            this.cbMon2.Size = new System.Drawing.Size(301, 24);
             this.cbMon2.TabIndex = 7;
+            this.cbMon2.SelectionChangeCommitted += new System.EventHandler(this.cbMon2_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -113,8 +114,9 @@
             this.cbLop1.FormattingEnabled = true;
             this.cbLop1.Location = new System.Drawing.Point(324, 85);
             this.cbLop1.Name = "cbLop1";
-            this.cbLop1.Size = new System.Drawing.Size(563, 24);
+            this.cbLop1.Size = new System.Drawing.Size(301, 24);
             this.cbLop1.TabIndex = 5;
+            this.cbLop1.SelectionChangeCommitted += new System.EventHandler(this.cbLop1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -135,7 +137,7 @@
             this.cbMon.FormattingEnabled = true;
             this.cbMon.Location = new System.Drawing.Point(324, 38);
             this.cbMon.Name = "cbMon";
-            this.cbMon.Size = new System.Drawing.Size(563, 24);
+            this.cbMon.Size = new System.Drawing.Size(301, 24);
             this.cbMon.TabIndex = 3;
             // 
             // label2
@@ -157,8 +159,9 @@
             this.cbLop.FormattingEnabled = true;
             this.cbLop.Location = new System.Drawing.Point(324, 5);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(563, 24);
+            this.cbLop.Size = new System.Drawing.Size(301, 24);
             this.cbLop.TabIndex = 1;
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -179,7 +182,7 @@
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.button2, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.button3, 0, 5);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(899, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(637, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.571428F));
@@ -189,7 +192,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42857F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.90476F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.523809F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(368, 210);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(259, 210);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // button1
@@ -199,10 +202,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(3, 21);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(362, 40);
+            this.button1.Size = new System.Drawing.Size(253, 40);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Thống kê";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -211,10 +215,11 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(3, 78);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(362, 38);
+            this.button2.Size = new System.Drawing.Size(253, 38);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
+            this.button2.Text = "Thống kê";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -223,10 +228,11 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(3, 146);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(362, 40);
+            this.button3.Size = new System.Drawing.Size(253, 40);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "Thống kê";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -240,7 +246,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1270, 267);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(899, 262);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // dgvTkeD
@@ -252,18 +258,19 @@
             this.dgvTkeD.ReadOnly = true;
             this.dgvTkeD.RowHeadersWidth = 51;
             this.dgvTkeD.RowTemplate.Height = 24;
-            this.dgvTkeD.Size = new System.Drawing.Size(1264, 261);
+            this.dgvTkeD.Size = new System.Drawing.Size(893, 256);
             this.dgvTkeD.TabIndex = 0;
             // 
             // FormTkeDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1277, 518);
+            this.ClientSize = new System.Drawing.Size(906, 513);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormTkeDiem";
             this.Text = "FormTkeDiem";
+            this.Load += new System.EventHandler(this.FormTkeDiem_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

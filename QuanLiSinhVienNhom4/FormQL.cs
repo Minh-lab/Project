@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLiSinhVienNhom4;
+using WindowsFormsApp6;
 
 namespace QuanLiSinhVienNhom4
 {
@@ -53,6 +54,12 @@ namespace QuanLiSinhVienNhom4
         {
             FormDiem formDiem = new FormDiem();
             formDiem.Show();
+        }
+
+        private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FromMon formMon = new FromMon();
+            formMon.Show();
         }
     }
 }

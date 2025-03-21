@@ -73,7 +73,7 @@ namespace QuanLiSinhVienNhom4
                 da.Fill(dt);
 
                 // Debug kiểm tra bảng có dữ liệu không
-                MessageBox.Show("Số bản ghi đã tải: " + dt.Rows.Count);
+ 
 
                 foreach (DataRow row in dt.Rows)
                 {
